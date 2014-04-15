@@ -1,0 +1,71 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style TYPE="text/css">
+.img-with-text {float: left; text-align: left}
+#sublist01{display: none;}
+#sublist02{display: none;}
+#sublist03{display: none;}
+#sublist04{display: none;}
+</style>
+<script type="text/javascript">
+ 	function kadabra(zap) {
+  	 if (document.getElementById) {
+  	 	var abra = document.getElementById(zap).style;
+   	 	if (abra.display == "block") {
+   	 		abra.display = "none";
+   	 	} else {
+   	 		abra.display= "block";
+  		}
+  	 	return false;
+  	 } else {
+  	 	return true;
+ 	 }
+ 	}
+</script>
+</head><body>
+<p><A HREF="index.html">Back</A></p>
+
+<h2>Absolute net flux in a loop</h2>
+<p>Section 0: &chi;1 = <-10,10>+n*120, &chi;2 = <-10,10>+n*120<br>
+Section 1: &chi;1 = <10,110>, &chi;2 = <240,360><br>
+Section 2: &chi;1 = <130,230>, &chi;2 = <240,360><br>
+Section 3: &chi;1 = <250,350>, &chi;2 = <240,360><br>
+Section 4: &chi;1 = <10,110>, &chi;2 = <120,240><br>
+Section 5: &chi;1 = <130,230>, &chi;2 = <120,240><br>
+Section 6: &chi;1 = <250,350>, &chi;2 = <120,240><br>
+Section 7: &chi;1 = <10,110>, &chi;2 = <0,120><br>
+Section 8: &chi;1 = <130,230>, &chi;2 = <0,120><br>
+Section 9: &chi;1 = <250,350>, &chi;2 = <0,120><br></p>
+<p>Definitions:<br>Flux<sub>i,j</sub> = Flux from section i in PDB to section j in PDB-REDO<br>
+Net flux<sub>i,j</sub> = Flux<sub>i,j</sub>-Flux<sub>j,i</sub><br>
+X<sub>i,PDB</sub> = total amount of isoleucines in section i in PDB<br>
+X<sub>i,PDB-REDO</sub> = total amount of isoleucines in section i in PDB-REDO</p>
+<A ONCLICK="return kadabra('sublist01');" HREF="R_Ile_NettoFlux_C.html">Table</A>
+<UL ID="sublist01">
+<TABLE border="1">
+<CAPTION><EM>Netto flux</EM></CAPTION>
+<TFOOT>
+<TR><TD colspan=11>Numbers are rounded to two digits to the right of the decimal point
+</TFOOT>
+<TR><TH>PDB<br>PDB-REDO<TH>S0<TH>S1<TH>S2<TH>S3<TH>S4<TH>S5<TH>S6<TH>S7<TH>S8<TH>S9
+<TR><TH>S0 <TD> 0 <TD> 8 <TD> 7 <TD> -167 <TD> -349 <TD> -129 <TD> -170 <TD> -116 <TD> -47 <TD> -103
+<TR><TH>S1 <TD> -8 <TD> 0 <TD> 0 <TD> -30 <TD> -381 <TD> -27 <TD> -17 <TD> -87 <TD> -22 <TD> -8
+<TR><TH>S2 <TD> -7 <TD> 0 <TD> 0 <TD> -34 <TD> -13 <TD> -147 <TD> -42 <TD> -17 <TD> -120 <TD> -14
+<TR><TH>S3 <TD> 167 <TD> 30 <TD> 34 <TD> 0 <TD> -27 <TD> 91 <TD> 1470 <TD> 18 <TD> 28 <TD> 764
+<TR><TH>S4 <TD> 349 <TD> 381 <TD> 13 <TD> 27 <TD> 0 <TD> 106 <TD> 149 <TD> 47 <TD> 80 <TD> 121
+<TR><TH>S5 <TD> 129 <TD> 27 <TD> 147 <TD> -91 <TD> -106 <TD> 0 <TD> -82 <TD> -9 <TD> 28 <TD> -21
+<TR><TH>S6 <TD> 170 <TD> 17 <TD> 42 <TD> -1470 <TD> -149 <TD> 82 <TD> 0 <TD> -38 <TD> -35 <TD> -476
+<TR><TH>S7 <TD> 116 <TD> 87 <TD> 17 <TD> -18 <TD> -47 <TD> 9 <TD> 38 <TD> 0 <TD> -9 <TD> 31
+<TR><TH>S8 <TD> 47 <TD> 22 <TD> 120 <TD> -28 <TD> -80 <TD> -28 <TD> 35 <TD> 9 <TD> 0 <TD> 16
+<TR><TH>S9 <TD> 103 <TD> 8 <TD> 14 <TD> -764 <TD> -121 <TD> 21 <TD> 476 <TD> -31 <TD> -16 <TD> 0
+</TABLE>
+</UL>
+<p>Arrows show the net flux from section A in PDB to section B in PDB-REDO.<br>
+Thickness of arrow<sub>i,j</sub> = ln(net flux+0.1).<br>Section 0 is omitted in the plots.</p>
+<p style="clear: both"></p>
+<div class="container">
+<div class="img-with-text">
+<img border=0 hspace=2 src="Figures/ILE/R/Flux/netto_C.png" alt="Flux isoleucine from PDB to PDB-REDO."  height="400px" width="400px" align="texttop">
+</div>
+</div>
+</body></html>

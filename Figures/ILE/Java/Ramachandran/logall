@@ -1,0 +1,187 @@
+WARN  2013-01-31 15:33:37,329 main SpringUtility:23 - Setting SpringContext from ClassPathXmlApplicationContext
+INFO  2013-01-31 15:33:37,440 main ClassPathXmlApplicationContext:495 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a39ab89: startup date [Thu Jan 31 15:33:37 CET 2013]; root of context hierarchy
+INFO  2013-01-31 15:33:37,490 main XmlBeanDefinitionReader:315 - Loading XML bean definitions from class path resource [spring.xml]
+INFO  2013-01-31 15:33:37,991 main ThreadPoolTaskExecutor:115 - Initializing ExecutorService 
+INFO  2013-01-31 15:33:37,994 main ClassPathXmlApplicationContext:1350 - Bean 'WhifExecutor' of type [class org.springframework.scheduling.config.TaskExecutorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+INFO  2013-01-31 15:33:37,995 main ClassPathXmlApplicationContext:1350 - Bean 'WhifExecutor' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+INFO  2013-01-31 15:33:38,010 main DefaultListableBeanFactory:557 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4aeaf40c: defining beans [statisticsMain,statisticsFunctions,chainDAO,refProgDAO,residueDAO,whifFunctionDAO,loggedErrorWhifDAO,hetGroupDAO,PDBEntryDAO,springUtility,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,transactionManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,sessionFactory,WhifExecutor,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+INFO  2013-01-31 15:33:38,108 main Version:15 - Hibernate Annotations 3.4.0.GA
+INFO  2013-01-31 15:33:38,115 main Environment:560 - Hibernate 3.3.2.GA
+INFO  2013-01-31 15:33:38,116 main Environment:593 - hibernate.properties not found
+INFO  2013-01-31 15:33:38,118 main Environment:771 - Bytecode provider name : javassist
+INFO  2013-01-31 15:33:38,121 main Environment:652 - using JDK 1.4 java.sql.Timestamp handling
+INFO  2013-01-31 15:33:38,165 main Version:14 - Hibernate Commons Annotations 3.1.0.GA
+INFO  2013-01-31 15:33:38,168 main Configuration:1489 - configuring from url: file:/home/stage/karenb/Documents/PDBeter%20code/pdbeter/pdbeter-core/target/classes/hibernate.cfg.xml
+INFO  2013-01-31 15:33:38,204 main Configuration:1589 - Configured SessionFactory: null
+INFO  2013-01-31 15:33:38,253 main AnnotationBinder:419 - Binding entity from annotated class: nl.ru.cmbi.pdbeter.core.model.domain.HetGroup
+INFO  2013-01-31 15:33:38,277 main EntityBinder:422 - Bind entity nl.ru.cmbi.pdbeter.core.model.domain.HetGroup on table HetGroup
+INFO  2013-01-31 15:33:38,323 main AnnotationBinder:419 - Binding entity from annotated class: nl.ru.cmbi.pdbeter.core.model.domain.RefProg
+INFO  2013-01-31 15:33:38,323 main EntityBinder:422 - Bind entity nl.ru.cmbi.pdbeter.core.model.domain.RefProg on table RefProg
+INFO  2013-01-31 15:33:38,344 main AnnotationBinder:419 - Binding entity from annotated class: nl.ru.cmbi.pdbeter.core.model.domain.UseFileDB
+INFO  2013-01-31 15:33:38,345 main EntityBinder:422 - Bind entity nl.ru.cmbi.pdbeter.core.model.domain.UseFileDB on table use_file_db
+INFO  2013-01-31 15:33:38,352 main AnnotationBinder:419 - Binding entity from annotated class: nl.ru.cmbi.pdbeter.core.model.domain.PDBEntryStatistics
+INFO  2013-01-31 15:33:38,353 main EntityBinder:422 - Bind entity nl.ru.cmbi.pdbeter.core.model.domain.PDBEntryStatistics on table pdbentry_statistics
+INFO  2013-01-31 15:33:38,358 main AnnotationBinder:419 - Binding entity from annotated class: nl.ru.cmbi.pdbeter.core.model.domain.WhifFunction
+INFO  2013-01-31 15:33:38,358 main EntityBinder:422 - Bind entity nl.ru.cmbi.pdbeter.core.model.domain.WhifFunction on table whif_function
+INFO  2013-01-31 15:33:38,360 main AnnotationBinder:419 - Binding entity from annotated class: nl.ru.cmbi.pdbeter.core.model.domain.LoggedErrorWhif
+INFO  2013-01-31 15:33:38,360 main EntityBinder:422 - Bind entity nl.ru.cmbi.pdbeter.core.model.domain.LoggedErrorWhif on table logged_error_whif
+INFO  2013-01-31 15:33:38,366 main AnnotationBinder:419 - Binding entity from annotated class: nl.ru.cmbi.pdbeter.core.model.domain.ExpMethod
+INFO  2013-01-31 15:33:38,366 main EntityBinder:422 - Bind entity nl.ru.cmbi.pdbeter.core.model.domain.ExpMethod on table ExpMethod
+INFO  2013-01-31 15:33:38,370 main AnnotationBinder:419 - Binding entity from annotated class: nl.ru.cmbi.pdbeter.core.model.domain.PDBEntry
+INFO  2013-01-31 15:33:38,371 main EntityBinder:422 - Bind entity nl.ru.cmbi.pdbeter.core.model.domain.PDBEntry on table PDBEntry
+INFO  2013-01-31 15:33:38,389 main AnnotationBinder:419 - Binding entity from annotated class: nl.ru.cmbi.pdbeter.core.model.domain.Residue
+INFO  2013-01-31 15:33:38,389 main EntityBinder:422 - Bind entity nl.ru.cmbi.pdbeter.core.model.domain.Residue on table Residue
+INFO  2013-01-31 15:33:38,397 main AnnotationBinder:419 - Binding entity from annotated class: nl.ru.cmbi.pdbeter.core.model.domain.Chain
+INFO  2013-01-31 15:33:38,397 main EntityBinder:422 - Bind entity nl.ru.cmbi.pdbeter.core.model.domain.Chain on table Chain
+INFO  2013-01-31 15:33:38,446 main CollectionBinder:650 - Mapping collection: nl.ru.cmbi.pdbeter.core.model.domain.PDBEntry.chainSet -> Chain
+INFO  2013-01-31 15:33:38,448 main CollectionBinder:650 - Mapping collection: nl.ru.cmbi.pdbeter.core.model.domain.PDBEntry.hetGroupSet -> HetGroup
+INFO  2013-01-31 15:33:38,448 main CollectionBinder:650 - Mapping collection: nl.ru.cmbi.pdbeter.core.model.domain.PDBEntry.loggedErrorWhifSet -> logged_error_whif
+INFO  2013-01-31 15:33:38,449 main CollectionBinder:650 - Mapping collection: nl.ru.cmbi.pdbeter.core.model.domain.PDBEntry.residueMap -> Residue
+INFO  2013-01-31 15:33:38,450 main CollectionBinder:650 - Mapping collection: nl.ru.cmbi.pdbeter.core.model.domain.Chain.residueMap -> Residue
+INFO  2013-01-31 15:33:38,456 main Version:17 - Hibernate Validator 3.1.0.GA
+INFO  2013-01-31 15:33:38,477 main AnnotationSessionFactoryBean:777 - Building new Hibernate SessionFactory
+INFO  2013-01-31 15:33:38,480 main HibernateSearchEventListenerRegister:53 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+INFO  2013-01-31 15:33:38,501 main DriverManagerConnectionProvider:64 - Using Hibernate built-in connection pool (not for production use!)
+INFO  2013-01-31 15:33:38,502 main DriverManagerConnectionProvider:65 - Hibernate connection pool size: 20
+INFO  2013-01-31 15:33:38,502 main DriverManagerConnectionProvider:68 - autocommit mode: false
+INFO  2013-01-31 15:33:38,505 main DriverManagerConnectionProvider:103 - using driver: org.postgresql.Driver at URL: jdbc:postgresql://localhost/PDBeter
+INFO  2013-01-31 15:33:38,506 main DriverManagerConnectionProvider:109 - connection properties: {user=estens, password=****}
+INFO  2013-01-31 15:33:38,596 main SettingsFactory:114 - RDBMS: PostgreSQL, version: 8.4.15
+INFO  2013-01-31 15:33:38,596 main SettingsFactory:115 - JDBC driver: PostgreSQL Native Driver, version: PostgreSQL 9.0 JDBC4 (build 801)
+INFO  2013-01-31 15:33:38,609 main Dialect:175 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+INFO  2013-01-31 15:33:38,612 main TransactionFactoryFactory:62 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+INFO  2013-01-31 15:33:38,613 main TransactionManagerLookupFactory:80 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+INFO  2013-01-31 15:33:38,613 main SettingsFactory:161 - Automatic flush during beforeCompletion(): disabled
+INFO  2013-01-31 15:33:38,613 main SettingsFactory:165 - Automatic session close at end of transaction: disabled
+INFO  2013-01-31 15:33:38,613 main SettingsFactory:172 - JDBC batch size: 50
+INFO  2013-01-31 15:33:38,613 main SettingsFactory:175 - JDBC batch updates for versioned data: disabled
+INFO  2013-01-31 15:33:38,614 main SettingsFactory:180 - Scrollable result sets: enabled
+INFO  2013-01-31 15:33:38,614 main SettingsFactory:188 - JDBC3 getGeneratedKeys(): enabled
+INFO  2013-01-31 15:33:38,614 main SettingsFactory:196 - Connection release mode: auto
+INFO  2013-01-31 15:33:38,615 main SettingsFactory:223 - Default batch fetch size: 1
+INFO  2013-01-31 15:33:38,615 main SettingsFactory:227 - Generate SQL with comments: enabled
+INFO  2013-01-31 15:33:38,615 main SettingsFactory:231 - Order SQL updates by primary key: disabled
+INFO  2013-01-31 15:33:38,615 main SettingsFactory:235 - Order SQL inserts for batching: disabled
+INFO  2013-01-31 15:33:38,616 main SettingsFactory:397 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+INFO  2013-01-31 15:33:38,617 main ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+INFO  2013-01-31 15:33:38,617 main SettingsFactory:243 - Query language substitutions: {}
+INFO  2013-01-31 15:33:38,617 main SettingsFactory:248 - JPA-QL strict compliance: disabled
+INFO  2013-01-31 15:33:38,617 main SettingsFactory:253 - Second-level cache: enabled
+INFO  2013-01-31 15:33:38,618 main SettingsFactory:257 - Query cache: disabled
+INFO  2013-01-31 15:33:38,620 main SettingsFactory:382 - Cache region factory : org.hibernate.cache.impl.bridge.RegionFactoryCacheProviderBridge
+INFO  2013-01-31 15:33:38,620 main RegionFactoryCacheProviderBridge:61 - Cache provider: org.hibernate.cache.NoCacheProvider
+INFO  2013-01-31 15:33:38,620 main SettingsFactory:267 - Optimize cache for minimal puts: disabled
+INFO  2013-01-31 15:33:38,621 main SettingsFactory:276 - Structured second-level cache entries: disabled
+INFO  2013-01-31 15:33:38,623 main SettingsFactory:305 - Statistics: disabled
+INFO  2013-01-31 15:33:38,623 main SettingsFactory:309 - Deleted entity synthetic identifier rollback: disabled
+INFO  2013-01-31 15:33:38,624 main SettingsFactory:324 - Default entity-mode: pojo
+INFO  2013-01-31 15:33:38,624 main SettingsFactory:328 - Named query checking : enabled
+INFO  2013-01-31 15:33:38,664 main SessionFactoryImpl:193 - building session factory
+INFO  2013-01-31 15:33:38,869 main SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+INFO  2013-01-31 15:33:38,873 main SchemaUpdate:155 - Running hbm2ddl schema update
+INFO  2013-01-31 15:33:38,873 main SchemaUpdate:167 - fetching database metadata
+INFO  2013-01-31 15:33:38,891 main SchemaUpdate:179 - updating schema
+INFO  2013-01-31 15:33:38,948 main TableMetadata:65 - table found: public.chain
+INFO  2013-01-31 15:33:38,948 main TableMetadata:66 - columns: [nucl_acids, ch_synonym, sec_struc, water_mols, hb_para, ch_other, non_std, ch_compound, pdbentry_id, unknown, beta, helix_pi, helix_3_10, n_res, id, errors, beta_bridge, chain, helix, hb_anti, cys_bridged, is_unique]
+INFO  2013-01-31 15:33:38,948 main TableMetadata:68 - foreign keys: [fk3e0e6a14d44e296]
+INFO  2013-01-31 15:33:38,948 main TableMetadata:69 - indexes: [chain_chain_key, chain_pkey]
+INFO  2013-01-31 15:33:38,985 main TableMetadata:65 - table found: public.expmethod
+INFO  2013-01-31 15:33:38,985 main TableMetadata:66 - columns: [id, pdbentry_id, free_r, r_factor, resolution, expmethod]
+INFO  2013-01-31 15:33:38,986 main TableMetadata:68 - foreign keys: [fk55e39d3e4d44e296]
+INFO  2013-01-31 15:33:38,986 main TableMetadata:69 - indexes: [expmethod_pdbentry_id_key, expmethod_pkey]
+INFO  2013-01-31 15:33:39,020 main TableMetadata:65 - table found: public.hetgroup
+INFO  2013-01-31 15:33:39,020 main TableMetadata:66 - columns: [id, name, natom, pdbentry_id, het_id]
+INFO  2013-01-31 15:33:39,021 main TableMetadata:68 - foreign keys: [fke03a2dc84d44e296]
+INFO  2013-01-31 15:33:39,021 main TableMetadata:69 - indexes: [hetgroup_het_id_key, hetgroup_pkey]
+INFO  2013-01-31 15:33:39,049 main TableMetadata:65 - table found: public.pdbentry
+INFO  2013-01-31 15:33:39,049 main TableMetadata:66 - columns: [id, accessioncode, last_updated, date, header]
+INFO  2013-01-31 15:33:39,049 main TableMetadata:68 - foreign keys: []
+INFO  2013-01-31 15:33:39,049 main TableMetadata:69 - indexes: [pdbentry_pkey, pdbentry_accessioncode_key]
+INFO  2013-01-31 15:33:39,081 main TableMetadata:65 - table found: public.pdbentry_refprog
+INFO  2013-01-31 15:33:39,081 main TableMetadata:66 - columns: [refprogset_id, pdbentryset_id]
+INFO  2013-01-31 15:33:39,082 main TableMetadata:68 - foreign keys: [fkb3cabd72c285d256, fkb3cabd72573cfefc]
+INFO  2013-01-31 15:33:39,082 main TableMetadata:69 - indexes: [pdbentry_refprog_pkey]
+INFO  2013-01-31 15:33:39,114 main TableMetadata:65 - table found: public.pdbentry_whif_function
+INFO  2013-01-31 15:33:39,114 main TableMetadata:66 - columns: [whiffunctionset_id, pdbentryset_id]
+INFO  2013-01-31 15:33:39,114 main TableMetadata:68 - foreign keys: [fk788fc8e53c3e240, fk788fc8e573cfefc]
+INFO  2013-01-31 15:33:39,114 main TableMetadata:69 - indexes: [pdbentry_whif_function_pkey]
+INFO  2013-01-31 15:33:39,141 main TableMetadata:65 - table found: public.refprog
+INFO  2013-01-31 15:33:39,141 main TableMetadata:66 - columns: [id, refprog]
+INFO  2013-01-31 15:33:39,141 main TableMetadata:68 - foreign keys: []
+INFO  2013-01-31 15:33:39,142 main TableMetadata:69 - indexes: [refprog_refprog_key, refprog_pkey]
+INFO  2013-01-31 15:33:39,215 main TableMetadata:65 - table found: public.residue
+INFO  2013-01-31 15:33:39,216 main TableMetadata:66 - columns: [pdbentry_id, symmetry_contact, bfactor_backbone, residuenumber, tau_angle, id, has_hydrogen_bonds, symmetry_contact_side, omega_torsion_angle, chi1_torsion_angle, residue_dssp_plus_local, chi2_torsion_angle, bfactor_outer, phi_torsion_angle, insertioncode, chi4_torsion_angle, use_residue_db, chi3_torsion_angle, bfactor_average, pdbnumber, bfactor_calpha, bfactor_sidechain, residue_dssp, mol_acc_sidechain, chain_id, modelnumber, last_updated, mol_acc_backbone, psi_torsion_angle, residuetype]
+INFO  2013-01-31 15:33:39,216 main TableMetadata:68 - foreign keys: [fka49e416b4d44e296, fka49e416b18230c1e]
+INFO  2013-01-31 15:33:39,216 main TableMetadata:69 - indexes: [residue_pkey, residue_chain_id_key]
+INFO  2013-01-31 15:33:39,247 main TableMetadata:65 - table found: public.logged_error_whif
+INFO  2013-01-31 15:33:39,248 main TableMetadata:66 - columns: [id, first_inserted, error_message, calculation_time, pdbentry_id, last_updated, whiffunction_id]
+INFO  2013-01-31 15:33:39,248 main TableMetadata:68 - foreign keys: [fk9ae8d262e0587596, fk9ae8d2624d44e296]
+INFO  2013-01-31 15:33:39,249 main TableMetadata:69 - indexes: [logged_error_whif_pdbentry_id_key, logged_error_whif_pkey, ix_loggederrorwhif_pdbentry]
+INFO  2013-01-31 15:33:39,282 main TableMetadata:65 - table found: public.pdbentry_statistics
+INFO  2013-01-31 15:33:39,283 main TableMetadata:66 - columns: [nucl_acids, sec_struc, water_mols, hb_para, non_std, pdbentry_id, has_structure_factors, unknown, beta, helix_pi, alternates, helix_3_10, n_res, id, errors, beta_bridge, helix, hb_anti, cys_bridged, has_dssp, hssp_aligned]
+INFO  2013-01-31 15:33:39,283 main TableMetadata:68 - foreign keys: [fkac6cb7fe4d44e296]
+INFO  2013-01-31 15:33:39,283 main TableMetadata:69 - indexes: [pdbentry_statistics_pkey, pdbentry_statistics_pdbentry_id_key]
+INFO  2013-01-31 15:33:39,322 main TableMetadata:65 - table found: public.use_file_db
+INFO  2013-01-31 15:33:39,323 main TableMetadata:66 - columns: [rmsz_angles, bump_score, pct_aminoacids_with_bad_backbone, use_this_file, ramachandran_z_score, pdbentry_id, n_models, resolution, pct_residues_with_bad_atoms, id, chi1_chi2_z_score, n_residues, rmsz_bonds, n_aminoacids, nh2o, n_ligand_atoms, packing_quality]
+INFO  2013-01-31 15:33:39,323 main TableMetadata:68 - foreign keys: [fka21caf694d44e296]
+INFO  2013-01-31 15:33:39,323 main TableMetadata:69 - indexes: [use_file_db_pkey, use_file_db_pdbentry_id_key]
+INFO  2013-01-31 15:33:39,351 main TableMetadata:65 - table found: public.whif_function
+INFO  2013-01-31 15:33:39,351 main TableMetadata:66 - columns: [whif_function, id]
+INFO  2013-01-31 15:33:39,352 main TableMetadata:68 - foreign keys: []
+INFO  2013-01-31 15:33:39,352 main TableMetadata:69 - indexes: [whif_function_pkey, whif_function_whif_function_key]
+INFO  2013-01-31 15:33:39,353 main SchemaUpdate:217 - schema update complete
+INFO  2013-01-31 15:36:27,037 main ImageUtil:64 - min: 1.0, max: 44.0 (log-scaled)
+INFO  2013-01-31 15:36:27,359 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_H_01_01 - ILE
+INFO  2013-01-31 15:39:17,963 main ImageUtil:64 - min: 1.0, max: 97.0 (log-scaled)
+INFO  2013-01-31 15:39:18,113 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_H_01_11 - ILE
+INFO  2013-01-31 15:42:06,776 main ImageUtil:64 - min: 1.0, max: 36.0 (log-scaled)
+INFO  2013-01-31 15:42:06,874 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_H_01_21 - ILE
+INFO  2013-01-31 15:44:57,220 main ImageUtil:64 - min: 1.0, max: 156.0 (log-scaled)
+INFO  2013-01-31 15:44:57,312 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_H_11_01 - ILE
+INFO  2013-01-31 15:47:51,987 main ImageUtil:64 - min: 1.0, max: 123.0 (log-scaled)
+INFO  2013-01-31 15:47:52,082 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_H_11_11 - ILE
+INFO  2013-01-31 15:50:52,171 main ImageUtil:64 - min: 1.0, max: 16.0 (log-scaled)
+INFO  2013-01-31 15:50:52,251 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_H_11_21 - ILE
+INFO  2013-01-31 15:53:44,470 main ImageUtil:64 - min: 1.0, max: 86.0 (log-scaled)
+INFO  2013-01-31 15:53:44,560 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_H_21_01 - ILE
+INFO  2013-01-31 15:56:37,265 main ImageUtil:64 - min: 1.0, max: 3674.0 (log-scaled)
+INFO  2013-01-31 15:56:37,392 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_H_21_11 - ILE
+INFO  2013-01-31 15:59:30,621 main ImageUtil:64 - min: 1.0, max: 704.0 (log-scaled)
+INFO  2013-01-31 15:59:30,715 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_H_21_21 - ILE
+INFO  2013-01-31 16:02:27,746 main ImageUtil:64 - min: 1.0, max: 23.0 (log-scaled)
+INFO  2013-01-31 16:02:27,856 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_S_01_01 - ILE
+INFO  2013-01-31 16:07:35,621 main ImageUtil:64 - min: 1.0, max: 182.0 (log-scaled)
+INFO  2013-01-31 16:07:36,029 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_S_01_11 - ILE
+INFO  2013-01-31 16:11:36,576 main ImageUtil:64 - min: 1.0, max: 18.0 (log-scaled)
+INFO  2013-01-31 16:11:36,764 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_S_01_21 - ILE
+INFO  2013-01-31 16:17:04,035 main ImageUtil:64 - min: 1.0, max: 32.0 (log-scaled)
+INFO  2013-01-31 16:17:04,135 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_S_11_01 - ILE
+INFO  2013-01-31 16:21:40,590 main ImageUtil:64 - min: 1.0, max: 112.0 (log-scaled)
+INFO  2013-01-31 16:21:40,711 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_S_11_11 - ILE
+INFO  2013-01-31 16:26:58,263 main ImageUtil:64 - min: 1.0, max: 13.0 (log-scaled)
+INFO  2013-01-31 16:26:58,347 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_S_11_21 - ILE
+INFO  2013-01-31 16:31:15,390 main ImageUtil:64 - min: 1.0, max: 70.0 (log-scaled)
+INFO  2013-01-31 16:31:15,524 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_S_21_01 - ILE
+INFO  2013-01-31 16:36:47,120 main ImageUtil:64 - min: 1.0, max: 598.0 (log-scaled)
+INFO  2013-01-31 16:36:47,493 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_S_21_11 - ILE
+INFO  2013-01-31 16:40:35,582 main ImageUtil:64 - min: 1.0, max: 164.0 (log-scaled)
+INFO  2013-01-31 16:40:35,687 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_S_21_21 - ILE
+INFO  2013-01-31 16:45:13,927 main ImageUtil:64 - min: 1.0, max: 40.0 (log-scaled)
+INFO  2013-01-31 16:45:14,101 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_C_01_01 - ILE
+INFO  2013-01-31 16:49:46,149 main ImageUtil:64 - min: 1.0, max: 97.0 (log-scaled)
+INFO  2013-01-31 16:49:46,573 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_C_01_11 - ILE
+INFO  2013-01-31 16:54:07,782 main ImageUtil:64 - min: 1.0, max: 12.0 (log-scaled)
+INFO  2013-01-31 16:54:07,900 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_C_01_21 - ILE
+INFO  2013-01-31 16:59:06,591 main ImageUtil:64 - min: 1.0, max: 29.0 (log-scaled)
+INFO  2013-01-31 16:59:06,737 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_C_11_01 - ILE
+INFO  2013-01-31 17:04:21,594 main ImageUtil:64 - min: 1.0, max: 50.0 (log-scaled)
+INFO  2013-01-31 17:04:21,778 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_C_11_11 - ILE
+INFO  2013-01-31 17:08:59,865 main ImageUtil:64 - min: 1.0, max: 13.0 (log-scaled)
+INFO  2013-01-31 17:09:00,220 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_C_11_21 - ILE
+INFO  2013-01-31 17:13:39,726 main ImageUtil:64 - min: 1.0, max: 47.0 (log-scaled)
+INFO  2013-01-31 17:13:39,889 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_C_21_01 - ILE
+INFO  2013-01-31 17:18:00,287 main ImageUtil:64 - min: 1.0, max: 160.0 (log-scaled)
+INFO  2013-01-31 17:18:00,580 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_C_21_11 - ILE
+INFO  2013-01-31 17:23:35,145 main ImageUtil:64 - min: 1.0, max: 95.0 (log-scaled)
+INFO  2013-01-31 17:23:35,324 main StatisticsFunctions:299 - Done with Ramachandran_BinPlot_C_21_21 - ILE
+

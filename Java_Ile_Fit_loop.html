@@ -1,0 +1,98 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type = "text/css">
+.img-with-text {float: left; text-align: left}
+#sublist01{display: none;}
+#sublist02{display: none;}
+#sublist03{display: none;}
+#sublist04{display: none;}
+</style>
+<script type="text/javascript">
+ 	function kadabra(zap) {
+  	 if (document.getElementById) {
+  	 	var abra = document.getElementById(zap).style;
+   	 	if (abra.display == "block") {
+   	 		abra.display = "none";
+   	 	} else {
+   	 		abra.display= "block";
+  		}
+  	 	return false;
+  	 } else {
+  	 	return true;
+ 	 }
+ 	}
+</script>
+</style>
+</head><body>
+<p><A HREF="index.html">Back</A></p>
+<h1>&chi;1-&chi;2 plots isoleucine in a loop + fit</h1>
+<h2>Dataset: resolution=[0.0 &Aring;-1.5 &Aring;></h2>
+<p>x-axis: &chi;1, [0,360]<br>y-axis: &chi;2, [0,360]<br>
+solid ellips: 1 standard deviation from the mean<br>
+dotted ellips: 2 standard deviations from the mean<br>
+'+': fitted mean when at least one standard deviation is greater than 120 degrees (see Table below)<br>
+'*': mean when there are less than 50 data points
+</p>
+<p style="clear: both"></p>
+<div class="container">
+<div class="img-with-text">
+<p>&phi;-&psi; of an &alpha;-helix</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/Fit/C_H_q15_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine"  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<p>&phi;-&psi; of a &beta;-strand</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/Fit/C_S_q15_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine"  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<p>other &phi;-&psi;</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/Fit/C_U_q15_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine"  height="400px" width="400px" align="texttop">
+</div>
+</div>
+<p style="clear: both"></p><br>
+<A ONCLICK="return kadabra('sublist01');" HREF="Java_Ile_Fit_loop.html">Table</A>
+	<UL ID="sublist01">
+		<TABLE border="1">
+<CAPTION><EM>Table 1: Fit parameters</EM></CAPTION>
+<tfoot><tr><td colspan="8">*mean values without fitted distribution, because counts<50.</td></tr></tfoot>
+<tr>
+<th>
+&phi;-&psi;-angles of:
+</th>
+<th>Section</th>
+<th>mean &chi;1</th>
+<th>mean &chi;2</th>
+<th>sd1</th>
+<th>sd2</th>
+<th>&theta;</th>
+<th>counts</th>
+</tr>
+<tr><td>&alpha;-helix</td><td>1</td><td>66.856*</td><td>283.548*</td><td>-</td><td>-</td><td>-</td><td>12</td></tr>
+<tr><td>&alpha;-helix</td><td>2</td><td>206.512*</td><td>291.387*</td><td>-</td><td>-</td><td>-</td><td>4</td></tr>
+<tr><td>&alpha;-helix</td><td>3</td><td>303.898</td><td>302.244</td><td>4.539</td><td>8.496</td><td>-2.146</td><td>835</td></tr>
+<tr><td>&alpha;-helix</td><td>4</td><td>64.011</td><td>171.319</td><td>4.703</td><td>6.399</td><td>4.009</td><td>3112</td></tr>
+<tr><td>&alpha;-helix</td><td>5</td><td>196.74</td><td>167.192</td><td>5.336</td><td>4.728</td><td>-2.729</td><td>792</td></tr>
+<tr><td>&alpha;-helix</td><td>6</td><td>293.973</td><td>169.703</td><td>5.501</td><td>5.853</td><td>0.917</td><td>1767</td></tr>
+<tr><td>&alpha;-helix</td><td>7</td><td>53.921</td><td>64.15</td><td>4.02</td><td>13.52</td><td>3.388</td><td>180</td></tr>
+<tr><td>&alpha;-helix</td><td>8</td><td>193.765</td><td>63.026</td><td>4.685</td><td>4.89</td><td>3.602</td><td>509</td></tr>
+<tr><td>&alpha;-helix</td><td>9</td><td>283.738</td><td>72.427</td><td>8.7</td><td>0.782</td><td>4.737</td><td>53</td></tr>
+<tr><td>&beta;-strand</td><td>1</td><td>68.814</td><td>288.333</td><td>1.293</td><td>1.808</td><td>-5.68</td><td>58</td></tr>
+<tr><td>&beta;-strand</td><td>2</td><td>193.321*</td><td>280.867*</td><td>-</td><td>-</td><td>-</td><td>19</td></tr>
+<tr><td>&beta;-strand</td><td>3</td><td>303.435</td><td>301.215</td><td>3.776</td><td>5.726</td><td>3.875</td><td>4595</td></tr>
+<tr><td>&beta;-strand</td><td>4</td><td>62.71</td><td>172.164</td><td>6.351</td><td>4.233</td><td>-0.63</td><td>4340</td></tr>
+<tr><td>&beta;-strand</td><td>5</td><td>190.153</td><td>167.614</td><td>4.735</td><td>7.687</td><td>-1.315</td><td>1944</td></tr>
+<tr><td>&beta;-strand</td><td>6</td><td>298.111</td><td>170.405</td><td>5.609</td><td>5.069</td><td>-3.51</td><td>12204</td></tr>
+<tr><td>&beta;-strand</td><td>7</td><td>62.274</td><td>89.636</td><td>4.437</td><td>2.02</td><td>4.899</td><td>139</td></tr>
+<tr><td>&beta;-strand</td><td>8</td><td>183.979</td><td>67.147</td><td>4.255</td><td>6.932</td><td>-1.661</td><td>441</td></tr>
+<tr><td>&beta;-strand</td><td>9</td><td>289.879</td><td>74.278</td><td>2.507</td><td>5.926</td><td>-4.448</td><td>204</td></tr>
+<tr><td>other</td><td>1</td><td>66.431*</td><td>278.152*</td><td>-</td><td>-</td><td>-</td><td>6</td></tr>
+<tr><td>other</td><td>2</td><td>208.644*</td><td>277.45*</td><td>-</td><td>-</td><td>-</td><td>4</td></tr>
+<tr><td>other</td><td>3</td><td>303.805</td><td>293.397</td><td>4.966</td><td>10.537</td><td>0.284</td><td>669</td></tr>
+<tr><td>other</td><td>4</td><td>60.085</td><td>169.541</td><td>5.443</td><td>5.082</td><td>-3.548</td><td>1037</td></tr>
+<tr><td>other</td><td>5</td><td>186.216</td><td>170.672</td><td>9.685</td><td>7.221</td><td>-2.011</td><td>157</td></tr>
+<tr><td>other</td><td>6</td><td>303.501</td><td>174.22</td><td>6.25</td><td>5.705</td><td>0.339</td><td>1329</td></tr>
+<tr><td>other</td><td>7</td><td>49.907</td><td>72.566</td><td>0.728</td><td>1.039</td><td>0.959</td><td>59</td></tr>
+<tr><td>other</td><td>8</td><td>194.521</td><td>58.791</td><td>13.852</td><td>5.581</td><td>-3.102</td><td>63</td></tr>
+<tr><td>other</td><td>9</td><td>291.857</td><td>82.595</td><td>2.472</td><td>4.27</td><td>-2.917</td><td>128</td></tr>
+</TABLE>
+	</UL>
+</body></html>

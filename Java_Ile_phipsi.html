@@ -1,0 +1,73 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style TYPE="text/css">
+#sublist{display: none;}
+#sublist2{display: none;}
+#sublist3{display: none;}
+#sublist4{display: none;}
+#sublist5{display: none;}
+#sublist6{display: none;}
+</style>
+<script type="text/javascript">
+ 	function kadabra(zap) {
+  	 if (document.getElementById) {
+  	 	var abra = document.getElementById(zap).style;
+   	 	if (abra.display == "block") {
+   	 		abra.display = "none";
+   	 	} else {
+   	 		abra.display= "block";
+  		}
+  	 	return false;
+  	 } else {
+  	 	return true;
+ 	 }
+ 	}
+</script>
+	</head><body>
+		<p><A HREF="index.html">Back</A></p>
+		<h1>Ramachandran plots isoleucine</h1>
+		<h2>Explanation</h2>
+		<p>
+		Put here some text...
+		</p>
+		<h2>Datasets:</h2>
+		<UL TYPE="square">
+			<LI><A ONCLICK="return kadabra('sublist');" HREF="Java_Ile_phipsi.html">Ordinary residues</A>
+				<UL TYPE="square" ID="sublist">
+					<LI><A ONCLICK="return kadabra('sublist2');" HREF="Java_Ile_phipsi.html">Resolution < 2.0 Å</A></LI>
+						<UL TYPE = "square" ID="sublist2">
+							<LI><A HREF="Java_Ile_phipsi_urdb1_0.0-2.0_H.html">DSSP='H'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_urdb1_0.0-2.0_S.html">DSSP='S'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_urdb1_0.0-2.0_C.html">DSSP='C'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_urdb1_0.0-2.0_all.html">All DSSP</A></LI>
+						</UL>
+					<LI><A ONCLICK="return kadabra('sublist3');" HREF="Java_Ile_phipsi.html">All resolutions</A></LI>
+						<UL TYPE = "square" ID="sublist3">
+							<LI><A HREF="Java_Ile_phipsi_urdb1_H.html">DSSP='H'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_urdb1_S.html">DSSP='S'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_urdb1_C.html">DSSP='C'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_urdb1_all.html">All DSSP</A></LI>
+						</UL>
+				</UL>
+			</LI>
+		 	<LI><A ONCLICK="return kadabra('sublist4');" HREF="Java_Ile_phipsi.html">All</A>
+				<UL TYPE="square" ID="sublist4">
+					<LI><A ONCLICK="return kadabra('sublist5');" HREF="Java_Ile_phipsi.html">Resolution < 2.0 Å</A></LI>
+						<UL TYPE = "square" ID="sublist5">
+							<LI><A HREF="Java_Ile_phipsi_0.0-2.0_H.html">DSSP='H'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_0.0-2.0_S.html">DSSP='S'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_0.0-2.0_C.html">DSSP='C'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_0.0-2.0_all.html">All DSSP</A></LI>
+						</UL>
+					<LI><A ONCLICK="return kadabra('sublist6');" HREF="Java_Ile_phipsi.html">All resolutions</A></LI>
+						<UL TYPE = "square" ID="sublist6">
+							<LI><A HREF="Java_Ile_phipsi_H.html">DSSP='H'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_S.html">DSSP='S'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_C.html">DSSP='C'</A></LI>
+							<LI><A HREF="Java_Ile_phipsi_all.html">All DSSP</A></LI>
+						</UL>
+				</UL>
+			</LI>
+		</UL>
+	</body>
+</html>

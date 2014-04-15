@@ -1,0 +1,88 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+		<title>Data analysis of side chain dihedral angles of isoleucine</title>
+		<meta charset="utf-8">
+<style TYPE="text/css">#sublist{display: none;}</style>
+<script type="text/javascript">
+ 	function kadabra(zap) {
+  	 if (document.getElementById) {
+  	 	var abra = document.getElementById(zap).style;
+   	 	if (abra.display == "block") {
+   	 		abra.display = "none";
+   	 	} else {
+   	 		abra.display= "block";
+  		}
+  	 	return false;
+  	 } else {
+  	 	return true;
+ 	 }
+ 	}
+</script>
+	</head><body>
+		<h1>Data analysis of side chain dihedral angles of isoleucine<br>Karen Berntsen<br>06-05-2013<br>Supervisor: Prof. Dr. Gert Vriend</h1>
+		<h2>Table of contents:</h2>
+		<UL TYPE="square">
+			<LI>Abstract</LI>
+			<LI><A HREF="Introduction.html">Introduction</A></LI>
+		   	<LI>Article</LI>
+		 	<LI><A ONCLICK="return kadabra('sublist');" HREF="Figures.html">Figures</A>
+				<UL TYPE="circle" ID="sublist">
+					<LI><A ONCLICK="return kadabra('sublist2');" HREF="Figures.html">Plots per DSSP value</A></LI>
+						<UL TYPE = "square" ID="sublist2">
+							<LI>Dataset:X-ray,urdb=1, residue_DSSP&#8800'?'</LI>
+							<LI>Dataset:X-ray, residue_DSSP&#8800'?'</LI>
+						</UL>
+					<LI><A ONCLICK="return kadabra('sublist3');" HREF="Figures.html">Plots per refinement software and DSSP value</A></LI>
+				</UL>
+			</LI>
+		<h2>Figures</h2>
+			<h3>Distribution plots &chi;1-&chi;1</h3>
+			    x-axis: &chi;1, y-axis: &chi;2
+			    range x-axis: 0-360
+			    range y-axis: 0-360
+			    Figures are log-scaled, from black(0) (via red, orange and yellow) to white(maximum).
+			<h4>Plots per DSSP value</h4>
+			<h5>Dataset:X-ray,urdb=1, residue_DSSP&#8800'?'</h5>
+			<h6> Resolution(Å) [0.0,2.0></h6>
+			<p>
+				a <img src="Figures/Ile/Java/Chi12_urdb1_H_res_0.0-2.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Helix." height="400px" width="400px" align="texttop">
+				b <img src="Figures/Ile/Java/Chi12_urdb1_S_res_0.0-2.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Strand." height="400px" width="400px" align="texttop"><br /><br />
+				c <img src="Figures/Ile/Java/Chi12_urdb1_C_res_0.0-2.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Loop." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale-->
+				d <img src="Figures/Ile/Java/Chi12_urdb1_res_0.0-2.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for All." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale--><br>
+				a: &alpha;-helix, b: &beta;-strand, c: loop, d: all. 
+			</p><h6> Resolution(Å) <3.0,10.0></h6><p>
+				a <img src="Figures/Ile/Java/Chi12_urdb1_H_res_3.0-10.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Helix." height="400px" width="400px" align="texttop">
+				b <img src="Figures/Ile/Java/Chi12_urdb1_S_res_3.0-10.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Strand." height="400px" width="400px" align="texttop"><br /><br />
+				c <img src="Figures/Ile/Java/Chi12_urdb1_C_res_3.0-10.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Loop." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale-->
+				d <img src="Figures/Ile/Java/Chi12_urdb1_res_3.0-10.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for All." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale--><br>
+				a: &alpha;-helix, b: &beta;-strand, c: loop, d: all. 
+			</p><h6> Resolution(Å) all</h6><p>
+				a <img src="Figures/Ile/Java/Chi12_urdb1_H_HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Helix." height="400px" width="400px" align="texttop">
+				b <img src="Figures/Ile/Java/Chi12_urdb1_S_HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Strand." height="400px" width="400px" align="texttop"><br /><br />
+				c <img src="Figures/Ile/Java/Chi12_urdb1_C_HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Loop." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale-->
+				d <img src="Figures/Ile/Java/Chi12_urdb1_HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for All." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale--><br>
+				a: &alpha;-helix, b: &beta;-strand, c: loop, d: all. 
+			</p>
+			<h5>Dataset:X-ray, residue_DSSP&#8800'?'</h5>
+			<h6> Resolution(Å) [0.0,2.0></h6>
+			<p>
+				a <img src="Figures/Ile/Java/Chi12_H_res_0.0-2.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Helix." height="400px" width="400px" align="texttop">
+				b <img src="Figures/Ile/Java/Chi12_S_res_0.0-2.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Strand." height="400px" width="400px" align="texttop"><br /><br />
+				c <img src="Figures/Ile/Java/Chi12_C_res_0.0-2.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Loop." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale-->
+				d <img src="Figures/Ile/Java/Chi12_res_0.0-2.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for All." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale--><br>
+				a: &alpha;-helix, b: &beta;-strand, c: loop, d: all. 
+			</p><h6> Resolution(Å) <3.0,10.0></h6><p>
+				a <img src="Figures/Ile/Java/Chi12_H_res_3.0-10.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Helix." height="400px" width="400px" align="texttop">
+				b <img src="Figures/Ile/Java/Chi12_S_res_3.0-10.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Strand." height="400px" width="400px" align="texttop"><br /><br />
+				c <img src="Figures/Ile/Java/Chi12_C_res_3.0-10.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Loop." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale-->
+				d <img src="Figures/Ile/Java/Chi12_res_3.0-10.0HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for All." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale--><br>
+				a: &alpha;-helix, b: &beta;-strand, c: loop, d: all. 
+			</p><h6> Resolution(Å) all</h6><p>
+				a <img src="Figures/Ile/Java/Chi12_H_HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Helix." height="400px" width="400px" align="texttop">
+				b <img src="Figures/Ile/Java/Chi12_S_HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Strand." height="400px" width="400px" align="texttop"><br /><br />
+				c <img src="Figures/Ile/Java/Chi12_C_HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for Loop." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale-->
+				d <img src="Figures/Ile/Java/Chi12_HT14-ILE.png" alt="2D histogram of &chi;1-&chi;1 combinations of isoleucine for All." height="400px" width="400px" align="texttop"><!--Add axes, titles and scale--><br>
+				a: &alpha;-helix, b: &beta;-strand, c: loop, d: all.
+			</p>
+	</body></html>

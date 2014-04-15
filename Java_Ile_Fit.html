@@ -1,0 +1,114 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type = "text/css">
+.img-with-text {float: left; text-align: left}
+#sublist01{display: none;}
+#sublist02{display: none;}
+#sublist03{display: none;}
+#sublist04{display: none;}
+</style>
+<script type="text/javascript">
+ 	function kadabra(zap) {
+  	 if (document.getElementById) {
+  	 	var abra = document.getElementById(zap).style;
+   	 	if (abra.display == "block") {
+   	 		abra.display = "none";
+   	 	} else {
+   	 		abra.display= "block";
+  		}
+  	 	return false;
+  	 } else {
+  	 	return true;
+ 	 }
+ 	}
+</script>
+</style>
+</head><body>
+<p><A HREF="index.html">Back</A></p>
+<h1>&chi;1-&chi;2 plots isoleucine + fit</h1>
+<h2>Dataset: resolution=[0.0 &Aring;-1.5 &Aring;></h2>
+<p>x-axis: &chi;1, [0,360]<br>y-axis: &chi;2, [0,360]<br>
+solid ellips: 1 standard deviation from the mean<br>
+dotted ellips: 2 standard deviations from the mean<br>
+'+': fitted mean when at least one standard deviation is greater than 120 degrees (see Table below)<br>
+'*': mean when there are less than 100 data points
+</p>
+<p style="clear: both"></p>
+<div class="container">
+<div class="img-with-text">
+<p>&alpha;-helix</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/Fit/H_q16_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine"  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<p>&beta;-strand</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/Fit/S_q16_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine"  height="400px" width="400px" align="texttop">
+</div>
+</div>
+<p style="clear: both"></p>
+<div class="container">
+<div class="img-with-text">
+<p>loop</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/Fit/C_q16_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine"  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<p>all</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/Fit/q16_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine"  height="400px" width="400px" align="texttop">
+</div>
+</div>
+<p style="clear: both"></p><br>
+<A ONCLICK="return kadabra('sublist01');" HREF="Java_Ile_Fit.html">Table</A>
+	<UL ID="sublist01">
+		<TABLE border="1">
+<CAPTION><EM>Table 1: Fit parameters</EM></CAPTION>
+<tfoot><tr><td colspan="8">*mean values without fitted distribution, because counts<50.</td></tr></tfoot>
+<tr>
+<th>
+DSSP
+</th>
+<th>Section</th>
+<th>mean &chi;1</th>
+<th>mean &chi;2</th>
+<th>sd1</th>
+<th>sd2</th>
+<th>&theta;</th>
+<th>counts</th>
+</tr>
+<tr><td>&alpha;-helix</td><td>1</td><td>73.814*</td><td>285.848*</td><td>-</td><td>-</td><td>-</td><td>10</td></tr>
+<tr><td>&alpha;-helix</td><td>2</td><td>197.551*</td><td>284.116*</td><td>-</td><td>-</td><td>-</td><td>33</td></tr>
+<tr><td>&alpha;-helix</td><td>3</td><td>296.401</td><td>299.19</td><td>3.653</td><td>5.883</td><td>0.599</td><td>5884</td></tr>
+<tr><td>&alpha;-helix</td><td>4</td><td>65.328</td><td>172.177</td><td>6.513</td><td>4.216</td><td>5.779</td><td>2879</td></tr>
+<tr><td>&alpha;-helix</td><td>5</td><td>195.257</td><td>169.738</td><td>4.846</td><td>7.901</td><td>1.16</td><td>1811</td></tr>
+<tr><td>&alpha;-helix</td><td>6</td><td>292.168</td><td>167.432</td><td>3.795</td><td>4.191</td><td>-5.868</td><td>29494</td></tr>
+<tr><td>&alpha;-helix</td><td>7</td><td>63.599</td><td>92.438</td><td>13.46</td><td>3.384</td><td>-4.57</td><td>189</td></tr>
+<tr><td>&alpha;-helix</td><td>8</td><td>192.126</td><td>64.008</td><td>6.431</td><td>3.191</td><td>-0.362</td><td>2308</td></tr>
+<tr><td>&alpha;-helix</td><td>9</td><td>278.54</td><td>54.808</td><td>6.56</td><td>5.716</td><td>2.663</td><td>196</td></tr>
+<tr><td>&beta;-strand</td><td>1</td><td>60.441*</td><td>276.243*</td><td>-</td><td>-</td><td>-</td><td>33</td></tr>
+<tr><td>&beta;-strand</td><td>2</td><td>184.301*</td><td>272.441*</td><td>-</td><td>-</td><td>-</td><td>34</td></tr>
+<tr><td>&beta;-strand</td><td>3</td><td>304.125</td><td>299.326</td><td>3.986</td><td>6.639</td><td>-5.374</td><td>8956</td></tr>
+<tr><td>&beta;-strand</td><td>4</td><td>62.113</td><td>170.611</td><td>5.274</td><td>5.683</td><td>-2.283</td><td>6922</td></tr>
+<tr><td>&beta;-strand</td><td>5</td><td>186.551</td><td>166.895</td><td>5.783</td><td>6.863</td><td>-4.433</td><td>4658</td></tr>
+<tr><td>&beta;-strand</td><td>6</td><td>299.927</td><td>170.213</td><td>5.498</td><td>5.208</td><td>-0.586</td><td>29432</td></tr>
+<tr><td>&beta;-strand</td><td>7</td><td>63.893</td><td>85.442</td><td>4.683</td><td>5.501</td><td>4.153</td><td>313</td></tr>
+<tr><td>&beta;-strand</td><td>8</td><td>185.692</td><td>66.308</td><td>4.459</td><td>8.413</td><td>1.572</td><td>462</td></tr>
+<tr><td>&beta;-strand</td><td>9</td><td>304.378</td><td>93.384</td><td>6.165</td><td>4.229</td><td>-4.08</td><td>1119</td></tr>
+<tr><td>loop</td><td>1</td><td>68.435</td><td>287.37</td><td>0.267</td><td>0.183</td><td>0</td><td>76</td></tr>
+<tr><td>loop</td><td>2</td><td>197.545*</td><td>281.919*</td><td>-</td><td>-</td><td>-</td><td>27</td></tr>
+<tr><td>loop</td><td>3</td><td>303.493</td><td>301.147</td><td>6.041</td><td>3.965</td><td>-0.8</td><td>6110</td></tr>
+<tr><td>loop</td><td>4</td><td>62.777</td><td>171.561</td><td>4.76</td><td>6.972</td><td>-2.307</td><td>8496</td></tr>
+<tr><td>loop</td><td>5</td><td>191.98</td><td>167.663</td><td>5.321</td><td>8.291</td><td>-4.362</td><td>2893</td></tr>
+<tr><td>loop</td><td>6</td><td>297.885</td><td>170.542</td><td>6.044</td><td>4.879</td><td>-3.3</td><td>15311</td></tr>
+<tr><td>loop</td><td>7</td><td>53.041</td><td>72.295</td><td>10.609</td><td>5.205</td><td>2.206</td><td>378</td></tr>
+<tr><td>loop</td><td>8</td><td>192.65</td><td>64.628</td><td>10.316</td><td>4.751</td><td>-3.129</td><td>1013</td></tr>
+<tr><td>loop</td><td>9</td><td>291.71</td><td>82.974</td><td>6.285</td><td>2.188</td><td>4.905</td><td>386</td></tr>
+<tr><td>all</td><td>1</td><td>69.676</td><td>289.257</td><td>6.244</td><td>3.175</td><td>4.958</td><td>119</td></tr>
+<tr><td>all</td><td>2</td><td>193.743</td><td>278.424</td><td>0.404</td><td>1.408</td><td>1.737</td><td>94</td></tr>
+<tr><td>all</td><td>3</td><td>302.561</td><td>299.947</td><td>4.417</td><td>7.856</td><td>-5.34</td><td>20950</td></tr>
+<tr><td>all</td><td>4</td><td>62.764</td><td>171.122</td><td>6.103</td><td>4.045</td><td>-3.483</td><td>18297</td></tr>
+<tr><td>all</td><td>5</td><td>189.253</td><td>167.685</td><td>5.893</td><td>7.89</td><td>-4.76</td><td>9362</td></tr>
+<tr><td>all</td><td>6</td><td>295.177</td><td>168.781</td><td>6.808</td><td>4.782</td><td>2.909</td><td>74237</td></tr>
+<tr><td>all</td><td>7</td><td>61.068</td><td>84.515</td><td>4.761</td><td>9.276</td><td>3.451</td><td>880</td></tr>
+<tr><td>all</td><td>8</td><td>193.099</td><td>64.232</td><td>4.996</td><td>7.797</td><td>1.152</td><td>3783</td></tr>
+<tr><td>all</td><td>9</td><td>299.77</td><td>86.41</td><td>10.637</td><td>4.754</td><td>5.473</td><td>1701</td></tr>
+</TABLE>
+</UL>
+</body></html>

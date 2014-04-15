@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Generator" content="Kate, the KDE Advanced Text Editor" />
+<title>filled.contour_afstandplaatje.R</title>
+</head>
+<body>
+<p><A HREF="index.html">Back</A></p>
+<h1>filled.contour2.R</h1>
+<pre style='color:#141312;background-color:#ffffff;'>
+filled.contour2<b><span style='color:#336366;'>&lt;-</span></b><span style='color:#0000bf;'>function</span> (<span style='color:#0057ae;'>x =</span> <b>seq</b>(<span style='color:#b08000;'>0</span>, <span style='color:#b08000;'>1</span>, <span style='color:#0057ae;'>length.out =</span> <b>nrow</b>(z)), <span style='color:#0057ae;'>y =</span> <b>seq</b>(<span style='color:#b08000;'>0</span>, <span style='color:#b08000;'>1</span>, 
+    <span style='color:#0057ae;'>length.out =</span> <b>ncol</b>(z)), z, <span style='color:#0057ae;'>xlim =</span> <b>range</b>(x, <span style='color:#0057ae;'>finite =</span> <span style='color:#006e28;'>TRUE</span>), 
+    <span style='color:#0057ae;'>ylim =</span> <b>range</b>(y, <span style='color:#0057ae;'>finite =</span> <span style='color:#006e28;'>TRUE</span>), <span style='color:#0057ae;'>zlim =</span> <b>range</b>(z, <span style='color:#0057ae;'>finite =</span> <span style='color:#006e28;'>TRUE</span>), 
+    <span style='color:#0057ae;'>levels =</span> <b>pretty</b>(zlim, nlevels), <span style='color:#0057ae;'>nlevels =</span> <span style='color:#b08000;'>20</span>, <span style='color:#0057ae;'>color.palette =</span> cm.colors, 
+    <span style='color:#0057ae;'>col =</span> <b>color.palette</b>(<b>length</b>(levels) <span style='color:#803f00;'>-</span> <span style='color:#b08000;'>1</span>), plot.title, plot.axes, 
+    key.title, key.axes, <span style='color:#0057ae;'>asp =</span> <span style='color:#006e28;'>NA</span>, <span style='color:#0057ae;'>xaxs =</span> <span style='color:#bf0303;'>&quot;i&quot;</span>, <span style='color:#0057ae;'>yaxs =</span> <span style='color:#bf0303;'>&quot;i&quot;</span>, <span style='color:#0057ae;'>las =</span> <span style='color:#b08000;'>1</span>, 
+    <span style='color:#0057ae;'>axes =</span> <span style='color:#006e28;'>TRUE</span>, <span style='color:#0057ae;'>frame.plot =</span> axes, ...) 
+{
+    <span style='color:#0000bf;'>if</span> (<b>missing</b>(z)) {
+        <span style='color:#0000bf;'>if</span> (!<b>missing</b>(x)) {
+            <span style='color:#0000bf;'>if</span> (<b>is.list</b>(x)) {
+                z <b><span style='color:#336366;'>&lt;-</span></b> x<span style='color:#803f00;'>$</span>z
+                y <b><span style='color:#336366;'>&lt;-</span></b> x<span style='color:#803f00;'>$</span>y
+                x <b><span style='color:#336366;'>&lt;-</span></b> x<span style='color:#803f00;'>$</span>x
+            }
+            <span style='color:#0000bf;'>else</span> {
+                z <b><span style='color:#336366;'>&lt;-</span></b> x
+                x <b><span style='color:#336366;'>&lt;-</span></b> <b>seq.int</b>(<span style='color:#b08000;'>0</span>, <span style='color:#b08000;'>1</span>, <span style='color:#0057ae;'>length.out =</span> <b>nrow</b>(z))
+            }
+        }
+        <span style='color:#0000bf;'>else</span> <b>stop</b>(<span style='color:#bf0303;'>&quot;no 'z' matrix specified&quot;</span>)
+    }
+    <span style='color:#0000bf;'>else</span> <span style='color:#0000bf;'>if</span> (<b>is.list</b>(x)) {
+        y <b><span style='color:#336366;'>&lt;-</span></b> x<span style='color:#803f00;'>$</span>y
+        x <b><span style='color:#336366;'>&lt;-</span></b> x<span style='color:#803f00;'>$</span>x
+    }
+    <span style='color:#0000bf;'>if</span> (<b>any</b>(<b>diff</b>(x) <span style='color:#803f00;'>&lt;=</span> <span style='color:#b08000;'>0</span>) <span style='color:#803f00;'>||</span> <b>any</b>(<b>diff</b>(y) <span style='color:#803f00;'>&lt;=</span> <span style='color:#b08000;'>0</span>)) 
+        <b>stop</b>(<span style='color:#bf0303;'>&quot;increasing 'x' and 'y' values expected&quot;</span>)
+    mar.orig <b><span style='color:#336366;'>&lt;-</span></b> (par.orig <b><span style='color:#336366;'>&lt;-</span></b> <b>par</b>(<b>c</b>(<span style='color:#bf0303;'>&quot;mar&quot;</span>, <span style='color:#bf0303;'>&quot;las&quot;</span>, <span style='color:#bf0303;'>&quot;mfrow&quot;</span>)))<span style='color:#803f00;'>$</span>mar
+    par.orig<span style='color:#803f00;'>$</span>mfrow<b><span style='color:#336366;'>&lt;-</span></b><b>c</b>(<span style='color:#b08000;'>1</span>,<span style='color:#b08000;'>3</span>);
+    <b>on.exit</b>(<b>par</b>(par.orig))
+    w <b><span style='color:#336366;'>&lt;-</span></b> (<span style='color:#b08000;'>3</span> <span style='color:#803f00;'>+</span> mar.orig[<span style='color:#b08000;'>2</span>L]) <span style='color:#803f00;'>*</span> <b>par</b>(<span style='color:#bf0303;'>&quot;csi&quot;</span>) <span style='color:#803f00;'>*</span> <span style='color:#b08000;'>2.54</span>
+    <b>layout</b>(<b>matrix</b>(<b>c</b>(<span style='color:#b08000;'>2</span>,<span style='color:#b08000;'>2</span>, <span style='color:#b08000;'>1</span>), <span style='color:#0057ae;'>ncol =</span> <span style='color:#b08000;'>3</span>L), <span style='color:#0057ae;'>widths =</span> <b>c</b>(<b>lcm</b>(w<span style='color:#803f00;'>*</span><span style='color:#b08000;'>3.6</span>),<b>lcm</b>(w<span style='color:#803f00;'>*</span><span style='color:#b08000;'>3</span>), <b>lcm</b>(w<span style='color:#803f00;'>*</span><span style='color:#b08000;'>1.4</span>)))
+    <b>par</b>(<span style='color:#0057ae;'>las =</span> las)
+    mar <b><span style='color:#336366;'>&lt;-</span></b> mar.orig
+    mar[<span style='color:#b08000;'>4</span>L] <b><span style='color:#336366;'>&lt;-</span></b> mar[<span style='color:#b08000;'>2</span>L]<span style='color:#803f00;'>+</span><span style='color:#b08000;'>14</span>
+    mar[<span style='color:#b08000;'>2</span>L] <b><span style='color:#336366;'>&lt;-</span></b> <span style='color:#b08000;'>0.5</span>
+    <b>par</b>(<span style='color:#0057ae;'>mar =</span> mar)
+    <b>plot.new</b>()
+    <b>plot.window</b>(<span style='color:#0057ae;'>xlim =</span> <b>c</b>(<span style='color:#b08000;'>0</span>, <span style='color:#b08000;'>1</span>), <span style='color:#0057ae;'>ylim =</span> <b>range</b>(levels), <span style='color:#0057ae;'>xaxs =</span> <span style='color:#bf0303;'>&quot;i&quot;</span>, 
+        <span style='color:#0057ae;'>yaxs =</span> <span style='color:#bf0303;'>&quot;i&quot;</span>)
+    <b>rect</b>(<span style='color:#b08000;'>0</span>, levels[<span style='color:#803f00;'>-</span><b>length</b>(levels)], <span style='color:#b08000;'>1</span>, levels[<span style='color:#803f00;'>-</span><span style='color:#b08000;'>1</span>L], <span style='color:#0057ae;'>col =</span> col)
+    <span style='color:#0000bf;'>if</span> (<b>missing</b>(key.axes)) {
+        <span style='color:#0000bf;'>if</span> (axes) 
+            <b>axis</b>(<span style='color:#b08000;'>4</span>)
+    }
+    <span style='color:#0000bf;'>else</span> key.axes
+    <b>box</b>()
+    <span style='color:#0000bf;'>if</span> (!<b>missing</b>(key.title)) 
+        key.title
+    mar <b><span style='color:#336366;'>&lt;-</span></b> mar.orig
+    mar[<span style='color:#b08000;'>2</span>L]<b><span style='color:#336366;'>&lt;-</span></b>mar[<span style='color:#b08000;'>1</span>L]
+    mar[<span style='color:#b08000;'>4</span>L] <b><span style='color:#336366;'>&lt;-</span></b> <span style='color:#b08000;'>1</span>
+    <b>par</b>(<span style='color:#0057ae;'>mar =</span> mar, <span style='color:#0057ae;'>pty=</span><span style='color:#bf0303;'>&quot;s&quot;</span>)
+    <b>plot.new</b>()
+    <b>plot.window</b>(xlim, ylim, <span style='color:#bf0303;'>&quot;&quot;</span>, <span style='color:#0057ae;'>xaxs =</span> xaxs, <span style='color:#0057ae;'>yaxs =</span> yaxs, <span style='color:#0057ae;'>asp =</span> asp)
+    <span style='color:#0000bf;'>if</span> (!<b>is.matrix</b>(z) <span style='color:#803f00;'>||</span> <b>nrow</b>(z) <span style='color:#803f00;'>&lt;=</span> <span style='color:#b08000;'>1</span>L <span style='color:#803f00;'>||</span> <b>ncol</b>(z) <span style='color:#803f00;'>&lt;=</span> <span style='color:#b08000;'>1</span>L) 
+        <b>stop</b>(<span style='color:#bf0303;'>&quot;no proper 'z' matrix specified&quot;</span>)
+    <span style='color:#0000bf;'>if</span> (!<b>is.double</b>(z)) 
+        <b>storage.mode</b>(z) <b><span style='color:#336366;'>&lt;-</span></b> <span style='color:#bf0303;'>&quot;double&quot;</span>
+    <b>.Internal</b>(<b>filledcontour</b>(<b>as.double</b>(x), <b>as.double</b>(y), z, <b>as.double</b>(levels), 
+        <span style='color:#0057ae;'>col =</span> col))
+    <span style='color:#0000bf;'>if</span> (<b>missing</b>(plot.axes)) {
+        <span style='color:#0000bf;'>if</span> (axes) {
+            <b>title</b>(<span style='color:#0057ae;'>main =</span> <span style='color:#bf0303;'>&quot;&quot;</span>, <span style='color:#0057ae;'>xlab =</span> <span style='color:#bf0303;'>&quot;&quot;</span>, <span style='color:#0057ae;'>ylab =</span> <span style='color:#bf0303;'>&quot;&quot;</span>);
+            <b>Axis</b>(x, <span style='color:#0057ae;'>side =</span> <span style='color:#b08000;'>1</span>)
+            <b>Axis</b>(y, <span style='color:#0057ae;'>side =</span> <span style='color:#b08000;'>2</span>)
+        }
+    }
+    <span style='color:#0000bf;'>else</span> plot.axes
+    <span style='color:#0000bf;'>if</span> (frame.plot) 
+	<b>box</b>()
+    <span style='color:#0000bf;'>if</span> (<b>missing</b>(plot.title)) 
+        <b>title</b>(...)
+    <span style='color:#0000bf;'>else</span> plot.title
+    <b>invisible</b>()
+}</pre>
+</body>
+</html>

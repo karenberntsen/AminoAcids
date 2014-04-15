@@ -1,0 +1,58 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style TYPE="text/css">
+#sublist01{display: none;}
+#sublist02{display: none;}
+#sublist03{display: none;}
+#sublist04{display: none;}
+</style>
+<script type="text/javascript">
+ 	function kadabra(zap) {
+  	 if (document.getElementById) {
+  	 	var abra = document.getElementById(zap).style;
+   	 	if (abra.display == "block") {
+   	 		abra.display = "none";
+   	 	} else {
+   	 		abra.display= "block";
+  		}
+  	 	return false;
+  	 } else {
+  	 	return true;
+ 	 }
+ 	}
+</script>
+	</head><body>
+		<p><A HREF="index.html">Back</A></p>
+		<h1>Bruto flux of isoleucine from PDB to PDB-REDO</h1>
+		<h2>Datasets:</h2>
+		<UL TYPE="square">
+			<LI><A ONCLICK="return kadabra('sublist01');" HREF="R_Ile_BrutoFlux.html">Absolute flux</A>
+				<UL TYPE="square" ID="sublist01">
+					<LI><A HREF="R_Ile_BrutoFlux_H.html">DSSP='H'</A></LI>
+					<LI><A HREF="R_Ile_BrutoFlux_S.html">DSSP='S'</A></LI>
+					<LI><A HREF="R_Ile_BrutoFlux_C.html">DSSP='C'</A></LI>
+					<LI><A HREF="R_Ile_BrutoFlux_all.html">All DSSP</A></LI>
+				</UL>
+			</LI>
+		 	<LI><A ONCLICK="return kadabra('sublist02');" HREF="R_Ile_BrutoFlux.html">Relative flux</A>
+				<UL TYPE="square" ID="sublist02">
+					<LI><A ONCLICK="return kadabra('sublist03');" HREF="R_Ile_BrutoFlux.html">Percentage of PDB</A></LI>
+						<UL TYPE = "square" ID="sublist03">
+							<LI><A HREF="R_Ile_BrutoFlux_PDB_H.html">DSSP='H'</A></LI>
+							<LI><A HREF="R_Ile_BrutoFlux_PDB_S.html">DSSP='S'</A></LI>
+							<LI><A HREF="R_Ile_BrutoFlux_PDB_C.html">DSSP='C'</A></LI>
+							<LI><A HREF="R_Ile_BrutoFlux_PDB_all.html">All DSSP</A></LI>
+						</UL>
+					<LI><A ONCLICK="return kadabra('sublist04');" HREF="R_Ile_BrutoFlux.html">Percentage of PDB-REDO</A></LI>
+						<UL TYPE = "square" ID="sublist04">
+							<LI><A HREF="R_Ile_BrutoFlux_PDB-REDO_H.html">DSSP='H'</A></LI>
+							<LI><A HREF="R_Ile_BrutoFlux_PDB-REDO_S.html">DSSP='S'</A></LI>
+							<LI><A HREF="R_Ile_BrutoFlux_PDB-REDO_C.html">DSSP='C'</A></LI>
+							<LI><A HREF="R_Ile_BrutoFlux_PDB-REDO_all.html">All DSSP</A></LI>
+						</UL>
+					</LI>
+				</UL>
+			</LI>
+		</UL>
+	</body>
+</html>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Generator" content="Kate, the KDE Advanced Text Editor" />
+<title>plot4d_helixplaatje.R</title>
+</head>
+<body>
+<p><A HREF="index.html">Back</A></p>
+<h1>plot4d.R</h1>
+Original version downloaded from http://gallery.r-enthusiasts.com/graph/4D_contour_plot_90, but this site doesn't exist anymore.<br>
+Orignal version still available via <A HREF="http://web.archive.org/web/20061012060616/http://addictedtor.free.fr/graphiques/graphcode.php?graph=90">http://web.archive.org/web/20061012060616/http://addictedtor.free.fr/graphiques/graphcode.php?graph=90</A><br>
+<pre style='color:#141312;background-color:#ffffff;'>
+<b><span style='color:#b00000;'>########################################################################</span></b>
+<i><span style='color:#888786;'># M.H.Prager Function for a 4D contourplot</span></i>
+<i><span style='color:#888786;'># email: mike.prager AT noaa.gov</span></i>
+<i><span style='color:#888786;'># This function plots x and y versus two responses, z1 and z2</span></i>
+<i><span style='color:#888786;'># Variable z1 is plotted as colored (or grayscale) contour areas with key</span></i>
+<i><span style='color:#888786;'># Variable z2 is overlaid as heavy black contours with labels</span></i>
+<i><span style='color:#888786;'># R language  April 8, 2005</span></i>
+<i><span style='color:#888786;'># Revised considerably: June 29, 2006</span></i>
+<i><span style='color:#888786;'># Last revision by Karen: September 17, 2013</span></i>
+<b><span style='color:#b00000;'>########################################################################</span></b>
+plot4d <b><span style='color:#336366;'>&lt;-</span></b> <span style='color:#0000bf;'>function</span>(x, y, z1, z2, <span style='color:#0057ae;'>nlev1 =</span> <span style='color:#b08000;'>8</span>, <span style='color:#0057ae;'>nlev2 =</span> <span style='color:#b08000;'>8</span>, <span style='color:#0057ae;'>chiavg =</span> <span style='color:#006e28;'>FALSE</span>,
+   <span style='color:#0057ae;'>keylab =</span> <b>deparse</b>(<b>substitute</b>(z1)),
+   <span style='color:#0057ae;'>main =</span> <b>paste</b>(<span style='color:#bf0303;'>&quot;Black contours:&quot;</span>, <b>deparse</b>(<b>substitute</b>(z2))),
+   <span style='color:#0057ae;'>col.start =</span> <span style='color:#b08000;'>0.0</span>, <span style='color:#0057ae;'>col.stop =</span> <span style='color:#b08000;'>0.8</span>, <span style='color:#0057ae;'>col.sat =</span> <span style='color:#b08000;'>0.35</span>,
+   <span style='color:#0057ae;'>use.color =</span> <span style='color:#006e28;'>TRUE</span>, <span style='color:#0057ae;'>label.regions =</span> <span style='color:#006e28;'>FALSE</span>,
+   <span style='color:#0057ae;'>draw.grid =</span> <span style='color:#006e28;'>FALSE</span>,<span style='color:#0057ae;'>draw.avg.chi=</span><span style='color:#006e28;'>FALSE</span>, labs,
+   <span style='color:#0057ae;'>xlab =</span> <b>deparse</b>(<b>substitute</b>(x)),
+   <span style='color:#0057ae;'>ylab =</span> <b>deparse</b>(<b>substitute</b>(y))){
+<b><span style='color:#b00000;'>########################################################################</span></b>
+<i><span style='color:#888786;'># ARGUMENT DEFINITIONS -- Most have Defaults (see arg list above)</span></i>
+<i><span style='color:#888786;'>#     x - x vector, dimension nx</span></i>
+<i><span style='color:#888786;'>#     y - y vector, dimension ny</span></i>
+<i><span style='color:#888786;'>#     z1 - response matrix 1, dimensions nx, ny</span></i>
+<i><span style='color:#888786;'>#     z2 - response matrix 2, dimensions nx, ny</span></i>
+<i><span style='color:#888786;'>#     NOTE: See contour() function help for relationships of x, y, z1 or z2</span></i>
+<i><span style='color:#888786;'>#     nlev1 - number of contour levels desired for colored contours of z1</span></i>
+<i><span style='color:#888786;'>#     nlev2 - number of contour levels desired for heavy contours of z2</span></i>
+<i><span style='color:#888786;'>#     keylab - text for colored-contour key (should be brief)</span></i>
+<i><span style='color:#888786;'>#     main - text for main title of plot</span></i>
+<i><span style='color:#888786;'>#     xlab, ylab - labels for x-axis and y-axis, respectively</span></i>
+<i><span style='color:#888786;'>#     col.start - starting value for rainbow of colors or grayscale</span></i>
+<i><span style='color:#888786;'>#     col.stop - ending value for rainbow of colors or grayscale</span></i>
+<i><span style='color:#888786;'>#     col.sat - saturation of colors</span></i>
+<i><span style='color:#888786;'>#     use.color - TRUE for rainbow, FALSE for grayscale</span></i>
+<i><span style='color:#888786;'>#     draw.grid - TRUE to overlay reference grid on contours</span></i>
+<i><span style='color:#888786;'>#     label.regions - TRUE to get numeric labels on filled contours</span></i>
+<b><span style='color:#b00000;'>########################################################################</span></b>
+   levs <b><span style='color:#336366;'>&lt;-</span></b> <b>pretty</b>(z1, <span style='color:#0057ae;'>n =</span> nlev1)    <i><span style='color:#888786;'># Levels R will use for colored contours</span></i>
+   nlev1 <b><span style='color:#336366;'>&lt;-</span></b> <b>length</b>(levs)            <i><span style='color:#888786;'># How many breaks are there?</span></i>
+   <i><span style='color:#888786;'># Define colors for breaks:</span></i>
+   <span style='color:#0000bf;'>if</span> (use.color) {
+      cols <b><span style='color:#336366;'>=</span></b> <b>rainbow</b>(<span style='color:#0057ae;'>n =</span> nlev1<span style='color:#803f00;'>-</span><span style='color:#b08000;'>1</span>, <span style='color:#0057ae;'>s =</span> col.sat, <span style='color:#0057ae;'>v =</span> <span style='color:#b08000;'>1</span>, <span style='color:#0057ae;'>start =</span> col.start,
+         <span style='color:#0057ae;'>end =</span> col.stop)
+      } <span style='color:#0000bf;'>else</span> {
+      cols <b><span style='color:#336366;'>=</span></b> <b>gray</b>(<b>seq</b>(<span style='color:#0057ae;'>from =</span> col.start, <span style='color:#0057ae;'>to =</span> col.stop, <span style='color:#0057ae;'>length =</span> nlev1 <span style='color:#803f00;'>-</span> <span style='color:#b08000;'>1</span>))
+      }
+   <i><span style='color:#888786;'># Plot x-variable, y-variable, and first z-variable</span></i>
+   <b>filled.contour2</b>(x, y, z1,
+      <span style='color:#0057ae;'>main =</span> main, <span style='color:#0057ae;'>font.main =</span> <span style='color:#b08000;'>1</span>, <span style='color:#0057ae;'>cex.main =</span><span style='color:#b08000;'>4.0</span>,<span style='color:#0057ae;'>cex.lab=</span><span style='color:#b08000;'>4.5</span>,
+      <span style='color:#0057ae;'>levels =</span> levs, <span style='color:#0057ae;'>col =</span> cols, <span style='color:#0057ae;'>xlab =</span> xlab, <span style='color:#0057ae;'>ylab =</span> ylab,<span style='color:#0057ae;'>key.axes=</span><b>axis</b>(<span style='color:#b08000;'>4</span>,<span style='color:#0057ae;'>at=</span><b>seq</b>(<b>min</b>(levs),<b>max</b>(levs)<span style='color:#803f00;'>-</span><span style='color:#b08000;'>1</span>)<span style='color:#803f00;'>+</span><span style='color:#b08000;'>0.5</span>,<span style='color:#0057ae;'>labels=</span>labs,<span style='color:#0057ae;'>cex.axis=</span><span style='color:#b08000;'>2.8</span>),
+      <span style='color:#0057ae;'>key.title =</span> {<b>title</b>(<span style='color:#0057ae;'>main =</span> keylab, <span style='color:#0057ae;'>font.main =</span> <span style='color:#b08000;'>2</span>, <span style='color:#0057ae;'>cex.main =</span> <span style='color:#b08000;'>2.0</span>)},
+      <i><span style='color:#888786;'># Rest of plot is done within plot.axes to get scaling right</span></i>
+      <span style='color:#0057ae;'>plot.axes =</span> {
+         <b>axis</b>(<span style='color:#0057ae;'>side =</span> <span style='color:#b08000;'>1</span>,<span style='color:#0057ae;'>at=</span><b>seq</b>(<span style='color:#b08000;'>1</span>,<span style='color:#b08000;'>361</span>,<span style='color:#b08000;'>60</span>),<span style='color:#0057ae;'>labels=</span><b>seq</b>(<span style='color:#b08000;'>0</span>,<span style='color:#b08000;'>360</span>,<span style='color:#b08000;'>60</span>),<span style='color:#0057ae;'>cex.axis=</span><span style='color:#b08000;'>4.0</span>)
+         <b>axis</b>(<span style='color:#0057ae;'>side =</span> <span style='color:#b08000;'>2</span>,<span style='color:#0057ae;'>at=</span><b>seq</b>(<span style='color:#b08000;'>1</span>,<span style='color:#b08000;'>361</span>,<span style='color:#b08000;'>60</span>),<span style='color:#0057ae;'>labels=</span><b>seq</b>(<span style='color:#b08000;'>0</span>,<span style='color:#b08000;'>360</span>,<span style='color:#b08000;'>60</span>),<span style='color:#0057ae;'>cex.axis=</span><span style='color:#b08000;'>4.0</span>)
+         <b><span style='color:#b00000;'>### Add gray contour lines to color plot.</span></b>
+         <b>contour</b>(x, y, z1, <span style='color:#0057ae;'>add =</span> <span style='color:#006e28;'>TRUE</span>, <span style='color:#0057ae;'>col =</span> <span style='color:#bf0303;'>&quot;gray40&quot;</span>, <span style='color:#0057ae;'>lwd =</span> <span style='color:#b08000;'>1</span>,
+            <span style='color:#0057ae;'>nlevels =</span> nlev1, <span style='color:#0057ae;'>drawlabels =</span> label.regions,
+            <span style='color:#0057ae;'>lty =</span> <span style='color:#bf0303;'>&quot;solid&quot;</span>, <span style='color:#0057ae;'>method =</span> <span style='color:#bf0303;'>&quot;edge&quot;</span>)
+         <b><span style='color:#b00000;'>#### Plot second z-variable as heavy lines:</span></b>
+         <b>contour</b>(x, y, z2, <span style='color:#0057ae;'>add =</span> <span style='color:#006e28;'>TRUE</span>, <span style='color:#0057ae;'>labcex =</span> <span style='color:#b08000;'>2.2</span>, <span style='color:#0057ae;'>lwd =</span> <span style='color:#b08000;'>2</span>,
+         <span style='color:#0057ae;'>nlevels =</span> nlev2)
+         <b><span style='color:#b00000;'>#### Plot points for theoretical average chi values</span></b>
+         <span style='color:#0000bf;'>if</span>(draw.avg.chi) {
+            <b>points</b>(<b>c</b>(<span style='color:#b08000;'>60</span>,<span style='color:#b08000;'>60</span>,<span style='color:#b08000;'>60</span>,<span style='color:#b08000;'>180</span>,<span style='color:#b08000;'>180</span>,<span style='color:#b08000;'>180</span>,<span style='color:#b08000;'>300</span>,<span style='color:#b08000;'>300</span>,<span style='color:#b08000;'>300</span>),<b>c</b>(<span style='color:#b08000;'>60</span>,<span style='color:#b08000;'>180</span>,<span style='color:#b08000;'>300</span>,<span style='color:#b08000;'>60</span>,<span style='color:#b08000;'>180</span>,<span style='color:#b08000;'>300</span>,<span style='color:#b08000;'>60</span>,<span style='color:#b08000;'>180</span>,<span style='color:#b08000;'>300</span>),<span style='color:#0057ae;'>col=</span><span style='color:#bf0303;'>'red'</span>,<span style='color:#0057ae;'>cex=</span><span style='color:#b08000;'>1</span>,<span style='color:#0057ae;'>pch=</span><span style='color:#b08000;'>16</span>)
+         }
+         <b><span style='color:#b00000;'>#### Add a light grid:</span></b>
+         <span style='color:#0000bf;'>if</span>(draw.grid)  {
+            <b>grid</b>(<span style='color:#0057ae;'>col=</span><span style='color:#bf0303;'>&quot;gray50&quot;</span>)
+            } <span style='color:#0000bf;'>else</span>  {
+            <b>axis</b>(<span style='color:#0057ae;'>side =</span> <span style='color:#b08000;'>3</span>, <span style='color:#0057ae;'>labels =</span> <span style='color:#006e28;'>FALSE</span>, <span style='color:#0057ae;'>tcl =</span> <span style='color:#803f00;'>-</span><span style='color:#b08000;'>0.3</span>)
+            <b>axis</b>(<span style='color:#0057ae;'>side =</span> <span style='color:#b08000;'>4</span>, <span style='color:#0057ae;'>labels =</span> <span style='color:#006e28;'>FALSE</span>, <span style='color:#0057ae;'>tcl =</span> <span style='color:#803f00;'>-</span><span style='color:#b08000;'>0.3</span>)
+            }
+
+      }  <i><span style='color:#888786;'># End of plot.axes</span></i>
+   )     <i><span style='color:#888786;'># End of filled.contour call</span></i>
+}        <i><span style='color:#888786;'># End of function</span></i></pre>
+</body>
+</html>

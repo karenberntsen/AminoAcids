@@ -1,0 +1,132 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+	<body>
+	<p><A HREF="index.html">Back</A></p>
+	<h1>Ordinary residues</h1>
+
+	<p>
+	This data set consists of residues in structures solved by X-ray diffraction methods and which have a score of 1.0 points according to the WHAT IF command <i>WSVUDB</i>.<br>
+The criteria use are explained in the WSDL and the HELP file of the webservices that are
+located at <A target="_blank" HREF=http://wiws.cmbi.ru.nl/wsdl/>http://wiws.cmbi.ru.nl/wsdl/</A> and <A target="_blank" HREF="http://wiws.cmbi.ru.nl/help/">http://wiws.cmbi.ru.nl/help/</A>, respectively.
+The web-service UseresidueDB gives scores to the atoms in a residue. The score for the
+residue is then the sum of all atomic scores.</p>
+<p>
+UseResidueDB<br><br>
+
+Use residue in database or not<br><br>
+
+<i>WHAT IF command:</i> WSVUDB<br><br>
+
+<i>Description:</i> Returns for each residue a value that tells you
+whether you can use this residue in database applications or that
+you better do not use it. The values are up to 1.0. 1.0 means that
+this is a perfect residue to use in training sets, in statistics, in
+databases, etcetera.<br>
+Each residue starts with 1.0 points. After that points are subtracted:<br>
+	<UL TYPE="square">
+   		<LI>-0.75 Bad C&alpha;</LI>
+   		<LI>-0.50 Bad other backbone atom</LI>
+   		<LI>-0.60 Bad C&beta; (not for Gly)</LI>
+   		<LI>-0.40 One or more other bad side chain atoms</LI>
+   		<LI>-0.35 N- or C-terminal residue (or next to invisible residue)</LI>
+   		<LI>-0.25 Next to residue from previous line</LI>
+   		<LI>-0.40 For non-canonical residue</LI>
+   		<LI>-0.40 For Gly or Pro</LI>
+   		<LI>-0.10 Next to one of previous two lines</LI>
+  		<LI>-0.15 C&alpha; has high B-factor</LI>
+  		<LI>-0.10 Other backbone atoms has high B-factor</LI>
+  		<LI>-0.08 C&beta; has high B-factor</LI>
+	</UL>
+</p><p>
+A B-factor is called high if it is either >60.0, or > 2.5 times the
+average B-factor of all C&alpha;'s in the whole file. An atom is called bad
+if it is absent, if any bond-length to a covalently bound atom
+deviates more than 0.4 Angstrom from the ideal value, and (for this
+service only) if anything non-canonical is bound to it. This latter
+criteria is more relevant for cysteines and serines than for
+isoleucines, of course, but it also catches situations where clashes
+with other groups are so severe that the software assumes a covalent
+bond.</p>
+	<p> The total amount of residues in this dataset is 25.997.920. In table 1, this number is split up into 18 of the 20 canonical amino acids.</p>
+		<table border="1">
+		<CAPTION><EM>Table 1: Amount of ordinary residues in the database</EM></CAPTION>
+		  <tr>
+		    <th>Amino acid</th>
+		    <th>Number of ordinary residues</th>
+		  </tr>
+		  <tr>
+		    <td>ALA</td>
+		    <td>2.539.813</td>
+		  </tr>
+		  <tr>
+		    <td>ARG</td>
+		    <td>1.490.786</td>
+		  </tr>
+		  <tr>
+		    <td>ASN</td>
+		    <td>1.207.933</td>
+		  </tr>
+		  <tr>
+		    <td>ASP</td>
+		    <td>1.625.814</td>
+		  </tr>
+		  <tr>
+		    <td>CYS</td>
+		    <td>418.853</td>
+		  </tr>
+		  <tr>
+		    <td>GLN</td>
+		    <td>1.072.522</td>
+		  </tr>
+		  <tr>
+		    <td>GLU</td>
+		    <td>1.820.941</td>
+		  </tr>
+		  <tr>
+		    <td>HIS</td>
+		    <td>698.156</td>
+		  </tr>
+		  <tr>
+		    <td>ILE</td>
+		    <td>1.766.611</td>
+		  </tr>
+		  <tr>
+		    <td>LEU</td>
+		    <td>2.830.319</td>
+		  </tr>
+		  <tr>
+		    <td>LYS</td>
+		    <td>1.569.539</td>
+		  </tr>
+		  <tr>
+		    <td>MET</td>
+		    <td>600.139</td>
+		  </tr>
+		  <tr>
+		    <td>PHE</td>
+		    <td>1.228.899</td>
+		  </tr>
+		  <tr>
+		    <td>SER</td>
+		    <td>1.706.375</td>
+		  </tr>
+		  <tr>
+		    <td>THR</td>
+		    <td>1.639.689</td>
+		  </tr>
+		  <tr>
+		    <td>TRP</td>
+		    <td>458.041</td>
+		  </tr>
+		  <tr>
+		    <td>TYR</td>
+		    <td>1.093.769</td>
+		  </tr>
+		  <tr>
+		    <td>VAL</td>
+		    <td>2.229.721</td>
+		  </tr>
+		</table>
+	</body>
+</html>

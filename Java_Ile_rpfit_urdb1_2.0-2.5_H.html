@@ -1,0 +1,122 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style TYPE="text/css">
+.img-with-text {float: left; text-align: left}
+#sublist01{display: none;}
+#sublist02{display: none;}
+#sublist03{display: none;}
+#sublist04{display: none;}
+</style>
+<script type="text/javascript">
+ 	function kadabra(zap) {
+  	 if (document.getElementById) {
+  	 	var abra = document.getElementById(zap).style;
+   	 	if (abra.display == "block") {
+   	 		abra.display = "none";
+   	 	} else {
+   	 		abra.display= "block";
+  		}
+  	 	return false;
+  	 } else {
+  	 	return true;
+ 	 }
+ 	}
+</script>
+</head><body>
+
+<p><A HREF="index.html">Back</A></p>
+<h2>Dataset: <A ONCLICK="return kadabra('sublist01');" HREF="Ordinary_residues.html">Ordinary residues</A>, resolution=<2.0 &Aring;-2.5 &Aring;], dssp='H'</h2>
+<p>x-axis: &chi;1, [0,360]<br>y-axis: &chi;2, [0,360]<br>solid ellips: 1 standard deviation from the mean<br>dotted ellips: 2 standard deviations from the mean<br>'+': fitted mean when at least one standard deviation is greater than 120 degrees (see Table below)<br>'*': mean when there are less than 50 data points</p>
+<p style="clear: both"></p>
+<div class="container">
+<div class="img-with-text">
+<p>REFMAC</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/RefProgFit/H_REFMAC_2.5_q17_urdb1_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine refined by REFMAC"  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<p>CNS</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/RefProgFit/H_CNS_2.5_q17_urdb1_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine refined by CNS"  height="400px" width="400px" align="texttop">
+</div>
+</div>
+<p style="clear: both"></p>
+<div class="container">
+<div class="img-with-text">
+<p>PHENIX</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/RefProgFit/H_PHENIX_2.5_q17_urdb1_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine refined by PHENIX"  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<p>X-PLOR</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/RefProgFit/H_X_PLOR_2.5_q17_urdb1_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine refined by X_PLOR"  height="400px" width="400px" align="texttop">
+</div>
+</div>
+<p style="clear: both"></p>
+<div class="container">
+<div class="img-with-text">
+<p>SHELXL</p>
+<img border=0 hspace=2 src="Figures/ILE/Java/RefProgFit/H_SHELXL_2.5_q17_urdb1_noax.png" alt="2D histogram of &chi;1-&chi;2 combinations of isoleucine refined by SHELXL"  height="400px" width="400px" align="texttop">
+</div>
+</div>
+<p style="clear: both"></p><br>
+<A ONCLICK="return kadabra('sublist01');" HREF="Java_Ile_Fit_Ord.html">Table</A>
+<UL ID="sublist01">
+<TABLE border="1">
+<CAPTION><EM>Table 1: Fit parameters</EM></CAPTION>
+<tfoot><tr><td colspan="8">*mean values without fitted distribution, because counts<50.</td></tr></tfoot>
+<tr>
+<th>Refprog</th>
+<th>Section</th>
+<th>mean &chi;1</th>
+<th>mean &chi;2</th>
+<th>sd1</th>
+<th>sd2</th>
+<th>&theta;</th>
+<th>counts</th>
+</tr>
+<tr><td>REFMAC</td><td>1</td><td>84.483</td><td>283.811</td><td>0.253</td><td>0.243</td><td>4.712</td><td>95</td></tr>
+<tr><td>REFMAC</td><td>2</td><td>221.903</td><td>286.22</td><td>21.61</td><td>10.242</td><td>-4.059</td><td>246</td></tr>
+<tr><td>REFMAC</td><td>3</td><td>297.081</td><td>301.278</td><td>7.013</td><td>6.237</td><td>5.868</td><td>18416</td></tr>
+<tr><td>REFMAC</td><td>4</td><td>65.142</td><td>170.021</td><td>6.798</td><td>8.21</td><td>3.492</td><td>6434</td></tr>
+<tr><td>REFMAC</td><td>5</td><td>195.534</td><td>167.703</td><td>7.538</td><td>6.702</td><td>2.728</td><td>4309</td></tr>
+<tr><td>REFMAC</td><td>6</td><td>291.552</td><td>165.253</td><td>5.297</td><td>5.826</td><td>-5.904</td><td>88588</td></tr>
+<tr><td>REFMAC</td><td>7</td><td>59.473</td><td>88.034</td><td>16.373</td><td>10.152</td><td>5.38</td><td>871</td></tr>
+<tr><td>REFMAC</td><td>8</td><td>192.623</td><td>63.585</td><td>8.511</td><td>6.089</td><td>-0.222</td><td>5561</td></tr>
+<tr><td>REFMAC</td><td>9</td><td>272.994</td><td>67.909</td><td>10.606</td><td>19.785</td><td>3.556</td><td>1702</td></tr>
+<tr><td>CNS</td><td>1</td><td>78.084</td><td>297.212</td><td>2.071</td><td>4.017</td><td>4.133</td><td>64</td></tr>
+<tr><td>CNS</td><td>2</td><td>214.449</td><td>295.267</td><td>5.764</td><td>28.909</td><td>1.029</td><td>306</td></tr>
+<tr><td>CNS</td><td>3</td><td>297.426</td><td>299.678</td><td>4.8</td><td>7.014</td><td>-1.892</td><td>13615</td></tr>
+<tr><td>CNS</td><td>4</td><td>63.89</td><td>175.709</td><td>5.065</td><td>5.993</td><td>-1.164</td><td>4158</td></tr>
+<tr><td>CNS</td><td>5</td><td>192.805</td><td>171.011</td><td>6.664</td><td>4.359</td><td>3.32</td><td>2852</td></tr>
+<tr><td>CNS</td><td>6</td><td>293.054</td><td>174.759</td><td>4.858</td><td>5.08</td><td>4.118</td><td>56663</td></tr>
+<tr><td>CNS</td><td>7</td><td>55.32</td><td>80.044</td><td>8.381</td><td>4.826</td><td>-3.627</td><td>579</td></tr>
+<tr><td>CNS</td><td>8</td><td>188.999</td><td>62.767</td><td>4.609</td><td>7.007</td><td>4.58</td><td>3801</td></tr>
+<tr><td>CNS</td><td>9</td><td>278.359</td><td>61.173</td><td>8.394</td><td>6.006</td><td>-0.941</td><td>1442</td></tr>
+<tr><td>PHENIX</td><td>1</td><td>94.784*</td><td>279.099*</td><td>-</td><td>-</td><td>-</td><td>10</td></tr>
+<tr><td>PHENIX</td><td>2</td><td>202.727*</td><td>279.79*</td><td>-</td><td>-</td><td>-</td><td>30</td></tr>
+<tr><td>PHENIX</td><td>3</td><td>298.322</td><td>301.07</td><td>6.647</td><td>5.773</td><td>2.657</td><td>3997</td></tr>
+<tr><td>PHENIX</td><td>4</td><td>65.296</td><td>174.47</td><td>6.669</td><td>5.225</td><td>-3.084</td><td>1455</td></tr>
+<tr><td>PHENIX</td><td>5</td><td>193.894</td><td>172.688</td><td>6.996</td><td>7.339</td><td>-1.998</td><td>792</td></tr>
+<tr><td>PHENIX</td><td>6</td><td>292.139</td><td>171.361</td><td>7.299</td><td>4.979</td><td>-1.132</td><td>19060</td></tr>
+<tr><td>PHENIX</td><td>7</td><td>61.461</td><td>91.281</td><td>11.665</td><td>6.278</td><td>5.908</td><td>172</td></tr>
+<tr><td>PHENIX</td><td>8</td><td>192.487</td><td>61.954</td><td>6.19</td><td>9.157</td><td>-1.857</td><td>1069</td></tr>
+<tr><td>PHENIX</td><td>9</td><td>272.189</td><td>58.997</td><td>7.811</td><td>12.289</td><td>0.179</td><td>325</td></tr>
+<tr><td>X-PLOR</td><td>1</td><td>67.138*</td><td>279.036*</td><td>-</td><td>-</td><td>-</td><td>18</td></tr>
+<tr><td>X-PLOR</td><td>2</td><td>203.605*</td><td>284.283*</td><td>-</td><td>-</td><td>-</td><td>42</td></tr>
+<tr><td>X-PLOR</td><td>3</td><td>297.634</td><td>300.602</td><td>7.115</td><td>8.094</td><td>1.138</td><td>3345</td></tr>
+<tr><td>X-PLOR</td><td>4</td><td>63.31</td><td>172.571</td><td>8.588</td><td>6.338</td><td>0.003</td><td>1170</td></tr>
+<tr><td>X-PLOR</td><td>5</td><td>193.674</td><td>172.162</td><td>9.492</td><td>6.524</td><td>-0.258</td><td>730</td></tr>
+<tr><td>X-PLOR</td><td>6</td><td>292.907</td><td>172.269</td><td>6.351</td><td>5.69</td><td>5.997</td><td>15020</td></tr>
+<tr><td>X-PLOR</td><td>7</td><td>70.311</td><td>95.734</td><td>16.264</td><td>6.087</td><td>-3.314</td><td>224</td></tr>
+<tr><td>X-PLOR</td><td>8</td><td>192.788</td><td>63.484</td><td>6.998</td><td>4.055</td><td>3.092</td><td>1076</td></tr>
+<tr><td>X-PLOR</td><td>9</td><td>272.249</td><td>64.952</td><td>10.428</td><td>20.183</td><td>-5.882</td><td>391</td></tr>
+<tr><td>SHELXL</td><td>1</td><td>66.048*</td><td>269.404*</td><td>-</td><td>-</td><td>-</td><td>2</td></tr>
+<tr><td>SHELXL</td><td>2</td><td>188.366*</td><td>264.605*</td><td>-</td><td>-</td><td>-</td><td>3</td></tr>
+<tr><td>SHELXL</td><td>3</td><td>301.562</td><td>314.718</td><td>6.417</td><td>4.302</td><td>0.227</td><td>231</td></tr>
+<tr><td>SHELXL</td><td>4</td><td>57.235</td><td>156.528</td><td>9.14</td><td>19.58</td><td>-6.037</td><td>71</td></tr>
+<tr><td>SHELXL</td><td>5</td><td>189.55*</td><td>172.274*</td><td>-</td><td>-</td><td>-</td><td>26</td></tr>
+<tr><td>SHELXL</td><td>6</td><td>288.968</td><td>164.451</td><td>5.457</td><td>7.763</td><td>-6.046</td><td>1114</td></tr>
+<tr><td>SHELXL</td><td>7</td><td>56.416*</td><td>91.642*</td><td>-</td><td>-</td><td>-</td><td>20</td></tr>
+<tr><td>SHELXL</td><td>8</td><td>188.283*</td><td>61.536*</td><td>-</td><td>-</td><td>-</td><td>45</td></tr>
+<tr><td>SHELXL</td><td>9</td><td>279.253*</td><td>73.081*</td><td>-</td><td>-</td><td>-</td><td>49</td></tr>
+</TABLE>
+</UL>
+</body></html>

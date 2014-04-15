@@ -1,0 +1,100 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style TYPE="text/css">
+.img-with-text {float: left; text-align: left}
+#sublist01{display: none;}
+#sublist02{display: none;}
+#sublist03{display: none;}
+#sublist04{display: none;}
+</style>
+<script type="text/javascript">
+ 	function kadabra(zap) {
+  	 if (document.getElementById) {
+  	 	var abra = document.getElementById(zap).style;
+   	 	if (abra.display == "block") {
+   	 		abra.display = "none";
+   	 	} else {
+   	 		abra.display= "block";
+  		}
+  	 	return false;
+  	 } else {
+  	 	return true;
+ 	 }
+ 	}
+</script>
+</head><body>
+<p><A HREF="index.html">Back</A></p>
+
+<h2>Absolute flux</h2>
+<p>Section 0: &chi;1 = <-10,10>+n*120, &chi;2 = <-10,10>+n*120<br>
+Section 1: &chi;1 = <10,110>, &chi;2 = <240,360><br>
+Section 2: &chi;1 = <130,230>, &chi;2 = <240,360><br>
+Section 3: &chi;1 = <250,350>, &chi;2 = <240,360><br>
+Section 4: &chi;1 = <10,110>, &chi;2 = <120,240><br>
+Section 5: &chi;1 = <130,230>, &chi;2 = <120,240><br>
+Section 6: &chi;1 = <250,350>, &chi;2 = <120,240><br>
+Section 7: &chi;1 = <10,110>, &chi;2 = <0,120><br>
+Section 8: &chi;1 = <130,230>, &chi;2 = <0,120><br>
+Section 9: &chi;1 = <250,350>, &chi;2 = <0,120><br></p>
+<p>Definitions:<br>Flux<sub>i,j</sub> = Flux from section i in PDB to section j in PDB-REDO<br>
+X<sub>i,PDB</sub> = total amount of isoleucines in section i in PDB<br>
+X<sub>i,PDB-REDO</sub> = total amount of isoleucines in section i in PDB-REDO</p>
+<A ONCLICK="return kadabra('sublist01');" HREF="R_Ile_BrutoFlux_all.html">Table</A>
+<UL ID="sublist01">
+<TABLE border="1">
+<CAPTION><EM>Flux</EM></CAPTION>
+<TFOOT>
+<TR><TD colspan=11>Numbers are rounded to two digits to the right of the decimal point
+</TFOOT>
+<TR><TH>PDB<br>PDB-REDO<TH>S0<TH>S1<TH>S2<TH>S3<TH>S4<TH>S5<TH>S6<TH>S7<TH>S8<TH>S9
+<TR><TH>S0 <TD> 930 <TD> 34 <TD> 39 <TD> 605 <TD> 357 <TD> 260 <TD> 1553 <TD> 207 <TD> 248 <TD> 748
+<TR><TH>S1 <TD> 16 <TD> 341 <TD> 1 <TD> 18 <TD> 65 <TD> 5 <TD> 28 <TD> 17 <TD> 5 <TD> 6
+<TR><TH>S2 <TD> 29 <TD> 2 <TD> 314 <TD> 8 <TD> 7 <TD> 28 <TD> 11 <TD> 2 <TD> 36 <TD> 3
+<TR><TH>S3 <TD> 1083 <TD> 73 <TD> 97 <TD> 140715 <TD> 487 <TD> 311 <TD> 12335 <TD> 310 <TD> 285 <TD> 4432
+<TR><TH>S4 <TD> 926 <TD> 734 <TD> 29 <TD> 518 <TD> 107750 <TD> 442 <TD> 792 <TD> 858 <TD> 271 <TD> 367
+<TR><TH>S5 <TD> 541 <TD> 56 <TD> 432 <TD> 124 <TD> 268 <TD> 57201 <TD> 485 <TD> 99 <TD> 1026 <TD> 90
+<TR><TH>S6 <TD> 2032 <TD> 76 <TD> 203 <TD> 8939 <TD> 812 <TD> 723 <TD> 545035 <TD> 303 <TD> 352 <TD> 2773
+<TR><TH>S7 <TD> 442 <TD> 172 <TD> 23 <TD> 128 <TD> 851 <TD> 88 <TD> 205 <TD> 4958 <TD> 142 <TD> 123
+<TR><TH>S8 <TD> 385 <TD> 45 <TD> 470 <TD> 242 <TD> 208 <TD> 1168 <TD> 345 <TD> 204 <TD> 23250 <TD> 109
+<TR><TH>S9 <TD> 858 <TD> 25 <TD> 33 <TD> 2141 <TD> 144 <TD> 133 <TD> 3386 <TD> 90 <TD> 90 <TD> 10865
+</TABLE>
+</UL>
+<p>Arrows show the flux from section A in PDB to section B in PDB-REDO.<br>
+Thickness of arrow<sub>i,j</sub> = ln(|Flux<sub>i,j</sub>|+0.1).<br>Section 0 is omitted in the plots.</p>
+<p style="clear: both"></p>
+<div class="container">
+<div class="img-with-text">
+<img border=0 hspace=2 src="Figures/ILE/R/Flux/absolute_S1.png" alt="Flux isoleucine from PDB to PDB-REDO in section 1."  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<img border=0 hspace=2 src="Figures/ILE/R/Flux/absolute_S2.png" alt="Flux isoleucine from PDB to PDB-REDO in section 2."  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<img border=0 hspace=2 src="Figures/ILE/R/Flux/absolute_S3.png" alt="Flux isoleucine from PDB to PDB-REDO in section 3."  height="400px" width="400px" align="texttop">
+</div>
+</div>
+<p style="clear: both"></p>
+<div class="container">
+<div class="img-with-text">
+<img border=0 hspace=2 src="Figures/ILE/R/Flux/absolute_S4.png" alt="Flux isoleucine from PDB to PDB-REDO in section 4."  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<img border=0 hspace=2 src="Figures/ILE/R/Flux/absolute_S5.png" alt="Flux isoleucine from PDB to PDB-REDO in section 5."  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<img border=0 hspace=2 src="Figures/ILE/R/Flux/absolute_S6.png" alt="Flux isoleucine from PDB to PDB-REDO in section 6."  height="400px" width="400px" align="texttop">
+</div>
+</div>
+<p style="clear: both"></p>
+<div class="container">
+<div class="img-with-text">
+<img border=0 hspace=2 src="Figures/ILE/R/Flux/absolute_S7.png" alt="Flux isoleucine from PDB to PDB-REDO in section 7."  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<img border=0 hspace=2 src="Figures/ILE/R/Flux/absolute_S8.png" alt="Flux isoleucine from PDB to PDB-REDO in section 8."  height="400px" width="400px" align="texttop">
+</div>
+<div class="img-with-text">
+<img border=0 hspace=2 src="Figures/ILE/R/Flux/absolute_S9.png" alt="Flux isoleucine from PDB to PDB-REDO in section 9."  height="400px" width="400px" align="texttop">
+</div>
+</div>
+</body></html>

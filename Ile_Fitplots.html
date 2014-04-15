@@ -1,0 +1,81 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style TYPE="text/css">
+#sublist01{display: none;}
+#sublist02{display: none;}
+#sublist03{display: none;}
+#sublist04{display: none;}
+#sublist05{display: none;}
+#sublist06{display: none;}
+#sublist07{display: none;}
+</style>
+<script type="text/javascript">
+ 	function kadabra(zap) {
+  	 if (document.getElementById) {
+  	 	var abra = document.getElementById(zap).style;
+   	 	if (abra.display == "block") {
+   	 		abra.display = "none";
+   	 	} else {
+   	 		abra.display= "block";
+  		}
+  	 	return false;
+  	 } else {
+  	 	return true;
+ 	 }
+ 	}
+</script>
+	</head><body>
+		<p><A HREF="index.html">Back</A></p>
+		<h1>Fitted plots</h1>
+		<h2>Explanation</h2>
+		<p>
+		Put here some text.
+		</p>
+		<h2>Fitted plots:</h2>
+		<p>
+		<UL TYPE="square">
+			<LI><A ONCLICK="return kadabra('sublist01');" HREF="Ile_Fitplots.html">DSSP & resolution < 1.5&Aring;</A>
+					<UL TYPE="square" ID="sublist01">
+						<LI><A HREF="Java_Ile_Fit_Ord.html">Ordinary residues & use file_db=TRUE</A></LI>
+						<LI><A HREF="Java_Ile_Fit.html">All</A></LI>
+					</UL>
+			</LI>
+			<LI><A ONCLICK="return kadabra('sublist02');"A HREF="Ile_Fitplots.html">Ile in a loop & resolution < 1.5&Aring;</A></LI>
+					<UL TYPE="square" ID="sublist02">
+						<LI><A HREF="Java_Ile_Fit_loop_Ord.html">Ordinary residues & use file_db=TRUE</A></LI>
+						<LI><A HREF="Java_Ile_Fit_loop.html">All</A></LI>
+					</UL>
+			</LI>
+			<LI><A ONCLICK="return kadabra('sublist03');"A HREF="Ile_Fitplots.html">Refinement software</A></LI>
+				<UL TYPE="square" ID="sublist03">
+					<LI><A ONCLICK="return kadabra('sublist04');"A HREF="Ile_Fitplots.html">Ordinary residues</A></LI>
+						<UL TYPE="square" ID="sublist04">
+							<LI><A ONCLICK="return kadabra('sublist05');" HREF="Java_Ile_refprog.html">Resolution <= 1.5 Å</A></LI>
+								<UL TYPE = "square" ID="sublist05">
+									<LI><A HREF="Java_Ile_rpfit_urdb1_0.0-1.5_H.html">DSSP='H'</A></LI>
+									<LI><A HREF="Java_Ile_rpfit_urdb1_0.0-1.5_S.html">DSSP='S'</A></LI>
+									<LI><A HREF="Java_Ile_rpfit_urdb1_0.0-1.5_C.html">DSSP='C'</A></LI>
+								</UL>
+							</LI>
+							<LI><A ONCLICK="return kadabra('sublist06');" HREF="Java_Ile_refprog.html">Resolution > 1.5 Å & Resolution <= 2.0 Å</A></LI>
+								<UL TYPE = "square" ID="sublist06">
+									<LI><A HREF="Java_Ile_rpfit_urdb1_1.5-2.0_H.html">DSSP='H'</A></LI>
+									<LI><A HREF="Java_Ile_rpfit_urdb1_1.5-2.0_S.html">DSSP='S'</A></LI>
+									<LI><A HREF="Java_Ile_rpfit_urdb1_1.5-2.0_C.html">DSSP='C'</A></LI>
+								</UL>
+							</LI>
+							<LI><A ONCLICK="return kadabra('sublist07');" HREF="Java_Ile_refprog.html">Resolution > 2.0 Å & Resolution <= 2.5 Å</A></LI>
+								<UL TYPE = "square" ID="sublist07">
+									<LI><A HREF="Java_Ile_rpfit_urdb1_2.0-2.5_H.html">DSSP='H'</A></LI>
+									<LI><A HREF="Java_Ile_rpfit_urdb1_2.0-2.5_S.html">DSSP='S'</A></LI>
+									<LI><A HREF="Java_Ile_rpfit_urdb1_2.0-2.5_C.html">DSSP='C'</A></LI>
+								</UL>
+							</LI>
+						</UL>
+					</LI>
+				</UL>
+			</LI>
+		</UL>
+		</p>
+	</body>
+</html>

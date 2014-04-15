@@ -1,0 +1,29 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head><body>
+<p><A HREF="index.html">Back</A></p>
+<h1>YASARA</h1>
+<P>The YASARA (Krieger <i>et al</i>., 2002) macro for Python (Lutz, 2001) was used to isolate the first &alpha;-helix (Ser6-Cys16) from crambin (PDBid=3NIR (Schmidt <i>et al</i>., 2011)) and to mutate all
+its residues to alanine. Secondly, the hydrogen bonding network of this &alpha;-helix was optimised, using WHAT IF&rsquo;s OPTHYD
+command.(Hooft <i>et al</i>., (1996c)). After this, this &alpha;-helix was energy minimised in a simulation cell in
+vacuum, using the NOVA (Krieger <i>et al</i>., 2002) force field, with non-periodic boundaries, a 20 &Aring; force cut-off for non-bonded interactions,
+and the Simspeed parameter set at 'slow'. Then a short steepest descent minimization was followed by a simulated annealing (200 steps
+of 2 fs and every 10th step the atom velocities are reduced by 0.9) until the energy improvement was less than 0.05 kJ/mol per atom.
+After this minimization, Ala11 was mutated into an isoleucine (&chi;1=0, &chi;2=0) which was then rotated around its &chi;1 and &chi;2 in
+steps of 1.0 degree to obtain 360<SUP>2</SUP> different conformations. The hydrogen positions were in every conformation
+optimised by energy minimisation, keeping the other atoms fixed. For each conformation the total energy (in Joule/mole) of the system and
+the atom experiencing the greatest force were stored. This atom was used to colour the background of the contours of the ln(energy) in
+&chi;1-&chi;2 plots. An adapted version of the R-script <A HREF="plot4d_v2.html">plot4d.r</A> was used to produce these plots. This same R-script was also modified
+to produce atom distance contour plots. For this plots, Ile 11 is again rotated into 360<SUP>2</SUP> different conformations. Instead
+of optimising the hydrogens, all methyl and methylene groups were replaced by pseudo-atoms (MB for the C&beta; of alanine and QG, MG
+and MD for C&gamma;1, C&gamma;2 and C&delta;1 of isoleucine respectively) located at their centre of mass. For every
+conformation, the distances from QG, MG and MD of Ile11 to all other (pseudo) atoms (excluding 1-2 and 1-3 interactions) were calculated.
+These distances were corrected by the Van der Waals radii of the atoms involved (H:1.20 &Aring;, C:1.60 &Aring;, N:1.50 &Aring;,
+O:1.45 &Aring;, RM:2.00 &Aring;, R2Q:2.00 &Aring;) (Tsai, 2007). The minimum resulting distance per conformation was plotted with a
+contour plot and the corresponding atom pairs were used as labels to colour this contour plot. The same two procedures were followed for a
+&beta;-strand (Val13-Gln26) in the VP2 subunit of the human rhinovirus (PDBid:1hrv (Rosenwirth <i>et al</i>., 1995)), where Gly19 (in the &gamma;-turn)
+was not mutated and were Ala23 was mutated back into an isoleucine after the energy minimisation.</P>
+
+<p><A HREF="Experiment - Choose and control experiments.html">Yasara documentation experiment</A></p>
+</BODY>
+</HTML>

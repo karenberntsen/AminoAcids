@@ -1,0 +1,76 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style TYPE="text/css">
+#sublist01{display: none;}
+#sublist02{display: none;}
+#sublist03{display: none;}
+#sublist04{display: none;}
+#sublist05{display: none;}
+#sublist06{display: none;}
+</style>
+<script type="text/javascript">
+ 	function kadabra(zap) {
+  	 if (document.getElementById) {
+  	 	var abra = document.getElementById(zap).style;
+   	 	if (abra.display == "block") {
+   	 		abra.display = "none";
+   	 	} else {
+   	 		abra.display= "block";
+  		}
+  	 	return false;
+  	 } else {
+  	 	return true;
+ 	 }
+ 	}
+</script>
+	</head><body>
+		<h1>Isoleucine</h1>
+		<UL TYPE="square">
+			<LI><A ONCLICK="return kadabra('sublist01');" HREF="index.html">Figures</A>
+				<UL TYPE="square" ID="sublist01">
+					<LI><A ONCLICK="return kadabra('sublist04');" HREF="index.html">2D histograms</A>
+						<UL TYPE="square" ID="sublist04">
+							<LI><A HREF="Java_Ile_all.html">&chi;1-&chi;2 plots</A></LI>
+							<LI><A HREF="Java_Ile_phipsi.html">Ramachandran plots</A></LI>
+							<LI><A HREF="Java_Ile_refprog.html">Refinement software &chi;1-&chi;2 plots</A></LI>
+							<LI><A HREF="Java_Ile_accSMC.html">Accessibility and symmetry contact &chi;1-&chi;2 plots</A></LI>
+							<LI><A HREF="Ile_Fitplots.html">&chi;1-&chi;2 plots with fitted distribution</A></LI>
+						</UL>
+					</LI>
+					<LI><A ONCLICK="return kadabra('sublist05');" HREF="index.html">Scatterplots</A>
+						<UL TYPE="square" ID="sublist05">
+							<LI><A HREF="R_Ile_Counts.html">Counts per section</A></LI>
+							<LI><A HREF="R_Ile_Avg.html">Mean &chi;1 and mean &chi;2</A></LI>
+							<LI><A HREF="R_Ile_DSSPphipsi.html">Mean &chi;1 and mean &chi;2 in a loop</A></LI>
+							<LI><A HREF="R_Ile_Refprog.html">Mean &chi;1 and mean &chi;2 per refinement software</A></LI>
+							<LI><A HREF="R_Ile_DateRefprog.html">Mean &chi;1 and mean &chi;2 per refinement software per deposition year</A></LI>
+							<LI><A HREF="R_Ile_Date.html">Mean &chi;1 and mean &chi;2 per deposition year</A></LI>
+							<LI><A HREF="R_Ile_2005.html">Mean &chi;1 and mean &chi;2 before and after 2005</A></LI>
+						</UL>
+					</LI>
+					<LI><A ONCLICK="return kadabra('sublist06');" HREF="index.html">Fluxplots</A></LI>
+						<UL TYPE="square" ID="sublist06">
+							<LI><A HREF="R_Ile_BrutoFlux.html">Bruto flux</A></LI>
+							<LI><A HREF="R_Ile_NettoFlux.html">Netto flux</A></LI>
+						</UL>
+					</LI>
+					<LI><A HREF="Ile_s1s2.html">Isoleucine in section 1 and 2</A></LI>
+					<LI><A HREF="Article_figures.html">Article figures</A></LI>
+				</UL>
+			</LI>
+			<LI><A ONCLICK="return kadabra('sublist02');" HREF="index.html">Method</A>			
+				<UL TYPE="square" ID="sublist02">
+					<LI><A HREF="Method_yasara.html">YASARA</A></LI>
+					<LI><A ONCLICK="return kadabra('sublist03');"HREF="index.html">R-scripts</A>
+						<UL TYPE="square" ID="sublist03">
+							<LI><A HREF="plot4d_v2.html">plot 4d</A></LI>
+							<LI><A HREF="filled.contour2.html">filled contour</A></LI>
+						</UL>
+					</LI>
+					<LI><A HREF="Ordinary_residues.html">Selection criteria ordinary residues</A></LI>
+				</UL>
+			</LI>
+			<LI><A HREF="References.html">References with full titles</A></LI>
+		</UL>
+	</body>
+</html>
