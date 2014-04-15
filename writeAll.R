@@ -1,3 +1,4 @@
+
 aa<-'Ile';
 aas<-toupper(aa);
 setwd('/home/stage/karenb/Documents/Verslag/');
