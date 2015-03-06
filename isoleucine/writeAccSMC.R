@@ -1,6 +1,6 @@
 aa<-'Ile';
 aas<-toupper(aa);
-setwd('/home/stage/karenb/Documents/Verslag/');
+setwd('/home/stage/karenb/Documents/Verslag/AminoAcids');
 source('getLongName.R');
 
 
@@ -43,7 +43,7 @@ for (dat in dataset) {
 			}
 			if (!(dat=="isUnique30" && res ==">3.0")) {
 				text<-c(text0,lijn1,text1,text2,"<p>Accessible</p>",makeImg(aas,"Accessible_","accessible ","","",datasetlist[dat],dsspvectlist3[dssp],resolutionlist[res]),text3,"<p>Intermediate</p>",makeImg(aas,"Intermediate_","intermediate ","","",datasetlist[dat],dsspvectlist3[dssp],resolutionlist[res]),text3,"<p>Burried</p>",makeImg(aas,"Burried_","burried ","","",datasetlist[dat],dsspvectlist3[dssp],resolutionlist[res]),lijn3,lijn3,text2,"<p>Symmetry contact</p>",makeImg(aas,"","","SMC_"," with symmetry contact",datasetlist[dat],dsspvectlist3[dssp],resolutionlist[res]),text3,"<p>No symmetry contact</p>",makeImg(aas,"","","NoSMC_"," without symmetry contact",datasetlist[dat],dsspvectlist3[dssp],resolutionlist[res]),lijn3,lijn3,text2,"<p>Accessible symmetry contact</p>",makeImg(aas,"Accessible_","accessible ","SMC_"," with symmetry contact",datasetlist[dat],dsspvectlist3[dssp],resolutionlist[res]),text3,"<p>Accessible no symmetry contact</p>",makeImg(aas,"Accessible_","accessible ","NoSMC_"," without symmetry contact",datasetlist[dat],dsspvectlist3[dssp],resolutionlist[res]),lijn3,lijn3,text2,"<p>Intermediate symmetry contact</p>",makeImg(aas,"Intermediate_","intermediate ","SMC_"," with symmetry contact",datasetlist[dat],dsspvectlist3[dssp],resolutionlist[res]),text3,"<p>Intermediate no symmetry contact</p>",makeImg(aas,"Intermediate_","intermediate ","NoSMC_"," without symmetry contact",datasetlist[dat],dsspvectlist3[dssp],resolutionlist[res]),lijn3,lijn3,lijn4);
-				setwd(paste('/home/stage/karenb/Documents/Verslag/',getLongName(aas),sep=""));
+				setwd(paste('/home/stage/karenb/Documents/Verslag/AminoAcids/',getLongName(aas),sep=""));
 				writeLines(text, con = name, sep = "\n", useBytes = FALSE)
 			}
 		}
@@ -51,7 +51,7 @@ for (dat in dataset) {
 }
 
 makeImg<-function(aas,acc,acc2,smc,text,dat,dssp,res) {
-setwd(paste("/home/stage/karenb/Documents/Verslag/",getLongName(aas),"/Figures/",aas,"/Java/AccessibilitySMC",sep=""));
+setwd(paste("/home/stage/karenb/Documents/Verslag/AminoAcids/",getLongName(aas),"/Figures/",aas,"/Java/AccessibilitySMC",sep=""));
 sublijn<-paste("_",acc,smc,dat,sep="");
 fileName<-list.files(pattern=paste('Chi12_ResolutionBin_0-360',substr(sublijn,0,nchar(sublijn)-1),'-',aas,'-',dssp,res,'.png',sep=""));
 if (length(fileName)==0) {

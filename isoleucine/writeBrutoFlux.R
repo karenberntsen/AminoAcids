@@ -1,4 +1,4 @@
-setwd('/home/stage/karenb/Documents/Verslag/');
+setwd('/home/stage/karenb/Documents/Verslag/AminoAcids');
 dsspvect<-c("H","S","C","all");
 dsspList<-list("H"="_H","S"="_S","C"="_C","all"="");
 dsspList2<-list("H"=" in an &alpha;-helix","S"=" in a &beta;-strand","C"=" in a loop","all"="");
@@ -28,13 +28,13 @@ for (dssp in dsspvect) {
 		name<-paste("R_Ile_BrutoFlux",pdbList3[pdb],dssp,".html",sep="");
 		table<-makeTable(name,paste("Flux",pdbList5[pdb],sep=""),getTableName(pdb,dssp));
 		text<-c(text1,lijn1,text8,text9,table,text10,text10b,text2,makeImg(pdbList[pdb],dsspList[dssp],1),text3,makeImg(pdbList[pdb],dsspList[dssp],2),text3,makeImg(pdbList[pdb],dsspList[dssp],3),lijn3,lijn3,text2,makeImg(pdbList[pdb],dsspList[dssp],4),text3,makeImg(pdbList[pdb],dsspList[dssp],5),text3,makeImg(pdbList[pdb],dsspList[dssp],6),lijn3,lijn3,text2,makeImg(pdbList[pdb],dsspList[dssp],7),text3,makeImg(pdbList[pdb],dsspList[dssp],8),text3,makeImg(pdbList[pdb],dsspList[dssp],9),lijn3,lijn3,lijn4);
-		setwd('/home/stage/karenb/Documents/Verslag/isoleucine');
+		setwd('/home/stage/karenb/Documents/Verslag/AminoAcids/isoleucine');
 		writeLines(text, con = name, sep = "\n", useBytes = FALSE)
 	}
 }
 
 makeImg<-function(pdb,dssp,section) {
-setwd("/home/stage/karenb/Documents/Verslag/isoleucine/Figures/ILE/R/Flux");
+setwd("/home/stage/karenb/Documents/Verslag/AminoAcids/isoleucine/Figures/ILE/R/Flux");
 fileName<-paste(pdb,dssp,"_S",section,'.png',sep="");
 if (length(list.files(pattern=fileName))==0) {
 print('Error! Cannot find file');

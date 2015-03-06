@@ -1,7 +1,7 @@
 library(Hmisc);
 aa<-'Ile';
 aas<-toupper(aa);
-setwd('/home/stage/karenb/Documents/Verslag/');
+setwd('/home/stage/karenb/Documents/Verslag/AminoAcids/');
 source('getLongName.R');
 
 dataset<-c("urdb1","isUnique30","no");
@@ -30,7 +30,7 @@ for (dat in dataset) {
 			name<-paste("R_",aa,"_Counts",datasetlist[dat],"_",binsizelist[bs],"_",scaleslist2[scale],".html",sep="");
 			lijn1<-paste("<h2>Dataset: ",datasetlist2[dat],"binsize = ",bs," &Aring;, ",scale," y-scale</h2>",sep="");
 			text<-c(text1,text0,lijn1,text8,text2,makeImg(aas,"1",datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"2",datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"3",datasetlist3[dat],bs,scaleslist[scale]),lijn3,lijn3,text2,makeImg(aas,"4",datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"5",datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"6",datasetlist3[dat],bs,scaleslist[scale]),lijn3,lijn3,text2,makeImg(aas,"7",datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"8",datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"9",datasetlist3[dat],bs,scaleslist[scale]),lijn3,lijn3,'<p style="clear: both"><br></p>',text2,makeImg2(aas,"g+",datasetlist3[dat],bs,scaleslist[scale],"1"),text3,makeImg2(aas,"t",datasetlist3[dat],bs,scaleslist[scale],"1"),text3,makeImg2(aas,"g-",datasetlist3[dat],bs,scaleslist[scale],"1"),lijn3,lijn3,'<p style="clear: both"><br></p>',text2,makeImg2(aas,"g+",datasetlist3[dat],bs,scaleslist[scale],"2"),text3,makeImg2(aas,"t",datasetlist3[dat],bs,scaleslist[scale],"2"),text3,makeImg2(aas,"g-",datasetlist3[dat],bs,scaleslist[scale],"2"),lijn3,lijn3,lijn4);
-			setwd(paste('/home/stage/karenb/Documents/Verslag/',getLongName(aas),sep=""));
+			setwd(paste('/home/stage/karenb/Documents/Verslag/AminoAcids',getLongName(aas),sep=""));
 			writeLines(text, con = name, sep = "\n", useBytes = FALSE);
 		}
 	}
@@ -39,7 +39,7 @@ for (dat in dataset) {
 
 makeImg<-function(aas,Q,dat,bs,scale) {
 binsizelist<-list("0.1"="","0.2"="bs2");
-setwd(paste("/home/stage/karenb/Documents/Verslag/",getLongName(aas),"/Figures/",aas,"/R/Counts",sep=""));
+setwd(paste("/home/stage/karenb/Documents/Verslag/AminoAcids",getLongName(aas),"/Figures/",aas,"/R/Counts",sep=""));
 fileName<-paste('Counts_',binsizelist[bs],dat,aas,'_Quadrant_',Q,'_counts',scale,'.png',sep="");
 if (length(list.files(pattern=fileName))==0) {
 string<-paste('<img border=0 hspace=2 src="Figures/NoData.png" alt="Percentage counts per resolution for ',getLongName(aas),' in section ',Q,'." height="400px" width="400px" align="texttop">',sep="");
@@ -51,7 +51,7 @@ return(string);
 
 makeImg2<-function(aas,Q,dat,bs,scale,chi) {
 binsizelist<-list("0.1"="","0.2"="bs2");
-setwd(paste("/home/stage/karenb/Documents/Verslag/",getLongName(aas),"/Figures/",aas,"/R/Counts",sep=""));
+setwd(paste("/home/stage/karenb/Documents/Verslag/AminoAcids",getLongName(aas),"/Figures/",aas,"/R/Counts",sep=""));
 fileName<-paste('Counts_chi',chi,"_",binsizelist[bs],dat,aas,'_Quadrant_',Q,'_chi',chi,'_counts',scale,'.png',sep="");
 #code in blue does not work for this category of files
 #if (length(list.files(pattern=fileName))==0) {

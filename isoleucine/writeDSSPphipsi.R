@@ -1,7 +1,7 @@
 library(Hmisc);
 aa<-'Ile';
 aas<-toupper(aa);
-setwd('/home/stage/karenb/Documents/Verslag/');
+setwd('/home/stage/karenb/Documents/Verslag/AminoAcids/');
 source('getLongName.R');
 
 dataset<-c("urdb1","isUnique30","no");
@@ -33,7 +33,7 @@ for (dat in dataset) {
 				name<-paste("R_",aa,"_DSSPphipsi",datasetlist[dat],"_",binsizelist[bs],"_",chi,"_",scale,"Y.html",sep="");
 				lijn1<-paste("<h2>Dataset: ",datasetlist2[dat],"&chi;",chislist[chi],", binsize = ",bs," &Aring;, ",scale," y-scale</h2>",sep="");
 				text<-c(text1,text0,lijn1,text8,lijn2,text2,makeImg(aas,"1",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"2",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"3",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),lijn3,lijn3,text2,makeImg(aas,"4",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"5",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"6",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),lijn3,lijn3,text2,makeImg(aas,"7",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"8",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"9",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),lijn3,lijn3,'<p style="clear: both"><br></p>',text2,makeImg(aas,"g+",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"t",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),text3,makeImg(aas,"g-",chislist[chi],datasetlist3[dat],bs,scaleslist[scale]),lijn3,lijn3,lijn4);
-				setwd(paste('/home/stage/karenb/Documents/Verslag/',getLongName(aas),sep=""));
+				setwd(paste('/home/stage/karenb/Documents/Verslag/AminoAcids/',getLongName(aas),sep=""));
 				writeLines(text, con = name, sep = "\n", useBytes = FALSE)
 			}
 		}
@@ -43,7 +43,7 @@ for (dat in dataset) {
 makeImg<-function(aas,Q,chi,dat,bs,scale) {
 binsizelist<-list("0.1"="","0.2"="bs2_");
 Qlist<-list("1"="1","2"="2","3"="3","4"="4","5"="5","6"="6","7"="7","8"="8","9"="9","g-"="g\\-","t"="t","g+"="g\\+");
-setwd(paste("/home/stage/karenb/Documents/Verslag/",getLongName(aas),"/Figures/",aas,"/R/DSSPphipsi",sep=""));
+setwd(paste("/home/stage/karenb/Documents/Verslag/AminoAcids/",getLongName(aas),"/Figures/",aas,"/R/DSSPphipsi",sep=""));
 fileName<-paste(dat,binsizelist[bs],'Quadrant_',Qlist[Q],"_chi",chi,scale,'_HCHSCS_50.png',sep="");
 if (length(list.files(pattern=fileName))==0) {
 string<-paste('<img border=0 hspace=2 src="Figures/NoData.png" alt="Mean values of &chi;',chi,' per resolution for ',getLongName(aas),' in section ',Q,'."  height="400px" width="400px" align="texttop">',sep="");

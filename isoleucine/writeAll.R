@@ -1,6 +1,6 @@
 aa<-'Ile';
 aas<-toupper(aa);
-setwd('/home/stage/karenb/Documents/Verslag/');
+setwd('/home/stage/karenb/Documents/Verslag/AminoAcids');
 source('getLongName.R');
 
 dataset<-c("urdb1","isUnique30","no");

@@ -1,12 +1,12 @@
 library(Hmisc);
 aa<-'Leu';
-setwd('/home/stage/karenb/Documents/Verslag');
+setwd('/home/stage/karenb/Documents/Verslag/AminoAcids/');
 aas<-toupper(aa);
 source('getLongName.R');
 setwd('isoleucine');
 files<-list.files(pattern="^Java_Ile_phipsi");
 for (file in files) {
-	setwd('/home/stage/karenb/Documents/Verslag/isoleucine');
+	setwd('/home/stage/karenb/Documents/Verslag/AminoAcids/isoleucine');
 	newlines<-c();
 	lines<-readLines(file);
 	for (line in lines) {
@@ -27,7 +27,7 @@ for (file in files) {
 		}
 		newlines<-c(newlines,line);
 	}
-	setwd('/home/stage/karenb/Documents/Verslag');
+	setwd('/home/stage/karenb/Documents/Verslag/AminoAcids/');
 	setwd(getLongName(aas));
 	writeLines(newlines,gsub('Ile',aa,file),sep = "\n", useBytes = FALSE);
 }

@@ -2,7 +2,7 @@
 library(Hmisc);
 aa<-'Ile';
 aas<-toupper(aa);
-setwd('/home/stage/karenb/Documents/Verslag/');
+setwd('/home/stage/karenb/Documents/Verslag/AminoAcids/');
 source('getLongName.R');
 
 resolution<-c("<2.0","<2.5","<1.5");

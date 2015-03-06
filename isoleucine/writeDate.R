@@ -1,7 +1,7 @@
 library(Hmisc);
 aa<-'Ile';
 aas<-toupper(aa);
-setwd('/home/stage/karenb/Documents/Verslag/');
+setwd('/home/stage/karenb/Documents/Verslag/AminoAcids/');
 source('getLongName.R');
 
 dataset<-c("urdb1","isUnique30","no");
@@ -34,7 +34,7 @@ for (dat in dataset) {
 				name<-paste("R_",aa,"_Date",datasetlist[dat],resolutionlist[res],"_",chi,"_",scale,"Y.html",sep="");
 				lijn1<-paste("<h2>Dataset: ",datasetlist2[dat],resolutionlist2[res],"&chi;",chislist[chi],", ",scale," y-scale</h2>",sep="");
 				text<-c(text1,text0,lijn1,text8,text2,makeImg(aas,"1",chislist[chi],datasetlist3[dat],resolutionlist3[res],scaleslist[scale]),text3,makeImg(aas,"2",chislist[chi],datasetlist3[dat],resolutionlist3[res],scaleslist[scale]),text3,makeImg(aas,"3",chislist[chi],datasetlist3[dat],resolutionlist3[res],scaleslist[scale]),lijn3,lijn3,text2,makeImg(aas,"4",chislist[chi],datasetlist3[dat],resolutionlist3[res],scaleslist[scale]),text3,makeImg(aas,"5",chislist[chi],datasetlist3[dat],resolutionlist3[res],scaleslist[scale]),text3,makeImg(aas,"6",chislist[chi],datasetlist3[dat],resolutionlist3[res],scaleslist[scale]),lijn3,lijn3,text2,makeImg(aas,"7",chislist[chi],datasetlist3[dat],resolutionlist3[res],scaleslist[scale]),text3,makeImg(aas,"8",chislist[chi],datasetlist3[dat],resolutionlist3[res],scaleslist[scale]),text3,makeImg(aas,"9",chislist[chi],datasetlist3[dat],resolutionlist3[res],scaleslist[scale]),lijn3,lijn3,lijn4);
-				setwd(paste('/home/stage/karenb/Documents/Verslag/',getLongName(aa),sep=""));
+				setwd(paste('/home/stage/karenb/Documents/Verslag/AminoAcids',getLongName(aa),sep=""));
 				writeLines(text, con = name, sep = "\n", useBytes = FALSE)
 			}
 		}
@@ -42,7 +42,7 @@ for (dat in dataset) {
 }
 
 makeImg<-function(aas,Q,chi,dat,res,scale) {
-setwd(paste("/home/stage/karenb/Documents/Verslag/",getLongName(aas),"/Figures/",aas,"/R/Date");
+setwd(paste("/home/stage/karenb/Documents/Verslag/AminoAcids",getLongName(aas),"/Figures/",aas,"/R/Date");
 fileName<-paste('Year_',dat,'Quadrant_',Q,'_chi',chi,res,scale,'_50.png',sep="");
 if (length(list.files(pattern=fileName))==0) {
 string<-paste('<img border=0 hspace=2 src="Figures/NoData.png" alt="Mean values of &chi;',chi,' per resolution for ',getLongName(aas),' in section ',Q,'."  height="400px" width="400px" align="texttop">',sep="");
