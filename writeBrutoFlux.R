@@ -1,4 +1,4 @@
-setwd('/home/stage/karenb/Documents/Verslag/06-05-2013');
+setwd('/home/stage/karenb/Documents/Verslag/');
 dsspvect<-c("H","S","C","all");
 dsspList<-list("H"="_H","S"="_S","C"="_C","all"="");
 dsspList2<-list("H"=" in an &alpha;-helix","S"=" in a &beta;-strand","C"=" in a loop","all"="");
@@ -16,25 +16,25 @@ text8<-readLines("text16.txt");
 text9<-"<p>Definitions:<br>Flux<sub>i,j</sub> = Flux from section i in PDB to section j in PDB-REDO<br>\nX<sub>i,PDB</sub> = total amount of isoleucines in section i in PDB<br>\nX<sub>i,PDB-REDO</sub> = total amount of isoleucines in section i in PDB-REDO</p>";
 text10<-"<p>Arrows show the flux from section A in PDB to section B in PDB-REDO.<br>"
 
-
+setwd('isoleucine');
 lijn0<-paste("<h1>Bruto flux of isoleucine from PDB to PDB-REDO per section</h1>",sep="");
 lijn3<-"</div>";
 lijn4<-"</body></html>";
 
 for (dssp in dsspvect) {
 	for (pdb in pdbvect) {
-		text10b<-paste("Thickness of arrow<sub>i,j</sub> = ln(|Flux<sub>i,j</sub>|",pdbList4[pdb],"+0.1).<br>Section 0 is omitted in the plots.</p>",sep="");
+		text10b<-paste("Thickness of arrow<sub>i,j</sub> = ln(|Flux<sub>i,j</sub>|",pdbList4[pdb],"+1).<br>Section 0 is omitted in the plots.</p>",sep="");
 		lijn1<-paste("<h2>",pdbList2[pdb],dsspList2[dssp],"</h2>",sep="");
 		name<-paste("R_Ile_BrutoFlux",pdbList3[pdb],dssp,".html",sep="");
 		table<-makeTable(name,paste("Flux",pdbList5[pdb],sep=""),getTableName(pdb,dssp));
 		text<-c(text1,lijn1,text8,text9,table,text10,text10b,text2,makeImg(pdbList[pdb],dsspList[dssp],1),text3,makeImg(pdbList[pdb],dsspList[dssp],2),text3,makeImg(pdbList[pdb],dsspList[dssp],3),lijn3,lijn3,text2,makeImg(pdbList[pdb],dsspList[dssp],4),text3,makeImg(pdbList[pdb],dsspList[dssp],5),text3,makeImg(pdbList[pdb],dsspList[dssp],6),lijn3,lijn3,text2,makeImg(pdbList[pdb],dsspList[dssp],7),text3,makeImg(pdbList[pdb],dsspList[dssp],8),text3,makeImg(pdbList[pdb],dsspList[dssp],9),lijn3,lijn3,lijn4);
-		setwd('/home/stage/karenb/Documents/Verslag/06-05-2013');
+		setwd('/home/stage/karenb/Documents/Verslag/isoleucine');
 		writeLines(text, con = name, sep = "\n", useBytes = FALSE)
 	}
 }
 
 makeImg<-function(pdb,dssp,section) {
-setwd("/home/stage/karenb/Documents/Verslag/06-05-2013/Figures/ILE/R/Flux");
+setwd("/home/stage/karenb/Documents/Verslag/isoleucine/Figures/ILE/R/Flux");
 fileName<-paste(pdb,dssp,"_S",section,'.png',sep="");
 if (length(list.files(pattern=fileName))==0) {
 print('Error! Cannot find file');

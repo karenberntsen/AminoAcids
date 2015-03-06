@@ -24,7 +24,7 @@ setwd('isoleucine');
 
 for (dssp in dsspvect) {
 	for (pdb in pdbvect) {
-		text10b<-paste("Thickness of arrow<sub>i,j</sub> = ln(net flux",pdbList4[pdb],"+0.1).<br>Section 0 is omitted in the plots.</p>",sep="");
+		text10b<-paste("Thickness of arrow<sub>i,j</sub> = ln(net flux",pdbList4[pdb],"+1).<br>Section 0 is omitted in the plots.</p>",sep="");
 		lijn1<-paste("<h2>",pdbList2[pdb],dsspList2[dssp],"</h2>",sep="");
 		name<-paste("R_Ile_NettoFlux",pdbList3[pdb],dssp,".html",sep="");
 		table<-makeTable(name,paste("Netto flux",pdbList5[pdb],sep=""),getTableName(pdb,dssp));
